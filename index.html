@@ -29,25 +29,108 @@
     </div>
     <footer>
         <p>&copy; 2025 Marco Stefanelli</p>
-        <div id="counter"></div>
-        <p><span id="page-view-count">0</span></p>
+    </footer>
     
-        <script>
-            // Retrieve the current count from localStorage, or set it to 0 if not available
-            let pageViewCount = localStorage.getItem('pageViewCount');
-            if (pageViewCount === null) {
-                pageViewCount = 0;
+    <script>
+        // Function to get current date and time in 'yyyy-mm-dd HH:mm:ss' format
+        function getCurrentDateTime() {
+            const now = new Date();
+            const date = now.toISOString().split('T')[0]; // Extracts 'yyyy-mm-dd' from ISO format
+            const time = now.toTimeString().split(' ')[0]; // Extracts 'HH:mm:ss' from time string
+            return `${date} ${time}`; // Combine both date and time
+        }
+    
+        // Generate a unique key for the page based on the URL or a custom identifier
+        function getPageKey() {
+            return window.location.pathname; // You can customize this if needed (e.g., use specific page IDs or URLs)
+        }
+    
+        // Retrieve the page-specific counter and logs from localStorage
+        const pageKey = getPageKey(); // Use the URL path as a unique key for each page
+        let pageViewCount = parseInt(localStorage.getItem(`${pageKey}-pageViewCount`), 10) || 0;
+        const todayDateTime = getCurrentDateTime(); // Get current date and time
+    
+        // Increment the page view count
+        pageViewCount++;
+    
+        // Save the updated count back to localStorage (specific to this page)
+        localStorage.setItem(`${pageKey}-pageViewCount`, pageViewCount);
+    
+        // Retrieve previous log entries for this page from localStorage (if any)
+        let logEntries = localStorage.getItem(`${pageKey}-logEntries`);
+        if (!logEntries) {
+            logEntries = '';  // Initialize an empty log if no entries exist
+        }
+    
+        // Function to generate and download the log file for the current page
+        function downloadLogFile() {
+            // Ask for a password to protect the download and reset the counter
+            const passwordPrompt = prompt('Enter the password to download the log file.\n\nType "reset" to reset the counter and logs.');
+            
+            const correctPassword = 'password123'; // Change this to your desired password
+    
+            // If the user typed "reset", prompt for password to reset
+            if (passwordPrompt === 'reset') {
+                const resetPassword = prompt("Enter the password to reset the counter and logs:");
+                // Check if the entered password for reset is correct
+                if (resetPassword !== correctPassword) {
+                    alert('Incorrect password for reset!');
+                    return;  // Exit if the password is incorrect
+                }
+    
+                // If the password for reset is correct, confirm reset
+                if (confirm("Are you sure you want to reset the counter and clear all log entries?")) {
+                    // Reset the page view count and log entries for this page
+                    localStorage.setItem(`${pageKey}-pageViewCount`, 0);
+                    localStorage.setItem(`${pageKey}-logEntries`, '');
+    
+                    // Reload the page to reflect the reset (optional)
+                    location.reload(); // This refreshes the page to reset the display
+                }
+                return;  // Exit after the reset logic
             }
     
-            // Increment the page view count
-            pageViewCount++;
+            // Check if the entered password for download is correct
+            if (passwordPrompt !== correctPassword) {
+                alert('Incorrect password!');
+                return;  // Exit if the password is incorrect
+            }
     
-            // Save the updated count back to localStorage
-            localStorage.setItem('pageViewCount', pageViewCount);
+            // Create the new log entry with date, time, and page view count
+            const newLogEntry = `Date and Time: ${todayDateTime}\nPage View Count: ${pageViewCount}\n`;
     
-            // Display the count on the page
-            document.getElementById('page-view-count').textContent = pageViewCount;
-        </script>
-    </footer>
+            // Prepend the new entry to the existing log entries
+            logEntries = newLogEntry + logEntries;
+    
+            // Save the updated log entries back to localStorage for this page
+            localStorage.setItem(`${pageKey}-logEntries`, logEntries);
+    
+            // Create the log file content (concatenating all previous entries)
+            const logContent = logEntries;
+    
+            // Create a Blob from the log content
+            const blob = new Blob([logContent], { type: 'text/plain' });
+    
+            // Create an object URL for the Blob
+            const url = URL.createObjectURL(blob);
+    
+            // Create a link element to trigger the download
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${pageKey}-page-view-log.txt`; // Use the page-specific filename
+            document.body.appendChild(a);
+            a.click(); // Trigger the download
+            document.body.removeChild(a);
+    
+            // Revoke the object URL after download
+            URL.revokeObjectURL(url);
+        }
+    
+        // Ensure the DOM is fully loaded before attaching the event listener
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add event listener for clicking on the footer to download the log
+            document.querySelector('footer').addEventListener('click', downloadLogFile);
+        });
+    </script>
 </body>
 </html>

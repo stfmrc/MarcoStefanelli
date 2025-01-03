@@ -101,13 +101,11 @@ video {
     body main {
         width: 90%; /* Make main content width more responsive */
         font-size: 1rem; /* Reduce font size for smaller screens */
-        top: 180px; /* Adjust position for smaller screens */
     }
 
     .video-container {
         width: 80%; /* Make video container responsive */
         height: auto; /* Maintain aspect ratio */
-        top: 200px; /* Adjust position */
     }
 
     button {
@@ -121,7 +119,7 @@ video {
 }
 
 /* For screens smaller than 480px (mobile phones) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
     body header {
         width: 100%; /* Make header almost full width */
         padding: 1rem; /* Reduce padding more */
@@ -130,13 +128,11 @@ video {
     body main {
         width: 100%; /* Main section takes almost full width */
         font-size: 0.9rem; /* Further reduce font size */
-        top: 160px; /* Adjust the position for small screens */
     }
 
     .video-container {
         width: 100%; /* Make video container take full width */
         height: auto; /* Maintain aspect ratio */
-        top: 230px; /* Adjust top for smaller screens */
     }
 
     button {

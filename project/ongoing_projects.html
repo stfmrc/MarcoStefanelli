@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ongoing-projects</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/ongoing_projects.css">
+</head>
+<body class="ongoing-projects"> <!-- Added class here -->
+    <header>
+        <h1>A neural network-based observation operator for weather radar data assimilation</h1>
+    </header>
+
+    <main>
+        <p>Forecasting convective storms is a major challenge in Numerical Weather Prediction (NWP). 
+            Data Assimilation (DA) improves the initial condition and subsequent forecasts by combining 
+            observations and previous model forecasts (background). Weather radar provides a dense source of observations in storm monitoring. 
+            Therefore, assimilating radar data should significantly improve storm forecasting skills. 
+            However, the short-range precipitation forecast performed by extrapolating rainfall patterns (nowcasting) 
+            from radar data is often better than numerical model-based forecasting with DA (Fabry and Meunier, 2020). 
+            This is related to the fact that the radar data only provides information on the precipitation pattern and intensity 
+            in the area affected by the storm. Furthermore, it does not directly provide information on the environmental conditions 
+            of the storm, such as temperature, wind, and humidity, neither within the precipitation region nor in the areas far from the storm. 
+            A potential solution involves using machine learning (ML) to construct the DA observation operator to generate a model-equivalent of the radar data. 
+            In this approach, NWP model fields (temperature, wind components, relative humidity) would serve as input, and radar observations 
+            would be the output of an encoder-decoder neural network. The constructed observation operator describes a non-linear relationship 
+            between the NWP model storm-related variables and radar observations, while its Jacobian allows radar information to infer other variables 
+            in the data assimilation, potentially enhancing storm forecasting skills. </p>
+
+        <!-- Video Section (Appears automatically when the page loads) -->
+            <video  autoplay loop>
+                <source src="../animation/RADAR_ROTATION_NO_Z.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Marco Stefanelli</p>
+        <a href="index.html">⬅️</a>
+    </footer>
+</body>
+</html>

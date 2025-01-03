@@ -1,0 +1,161 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: clamp(16px, 1vw, 28px);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-kerning: normal;
+}
+
+
+
+/* Body Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack the header, main, and footer */
+    justify-content: space-between; /* Ensure space between elements */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */    
+    justify-content: flex-start; /* Align content to the top */
+    font-kerning: normal;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center;     /* Center content horizontally */
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom, #00000090, #0b3487); /* Gradient background */
+    background-size: cover; /* Ensure background covers the entire page */
+    background-repeat: no-repeat; /* Prevent tiling */
+    /*background-attachment: fixed; /* This will make the background stay fixed when scrolling */
+
+    color: white; /* Text color */
+}
+
+/* Ensure the background doesn't change size or position when scrolling */
+html {
+    height: 100%;
+}
+
+body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh;
+
+
+}
+
+/* Header Styles */
+header {
+    display: flex; /* Enable flexbox layout */
+    flex-direction: column;
+    /*background-color: rgba(4, 40, 73, 0.934); /* Semi-transparent background */
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 60%;             /* Adjust width as needed */
+    border-radius: 15px;    /* Rounded corners */
+    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    margin-bottom: 40px;    /* Space between header and button container */
+}
+
+
+/* email style */
+#mail p {
+    font-size:1px !important; 
+    margin-top: 0;
+    margin-bottom: 50px;    
+    color: white; 
+    text-align: center; 
+}
+
+p a {
+    text-decoration: none; /* no underline */
+    color: #fcfcfc; 
+}
+
+p a:hover {
+    text-decoration: underline; /* add underline whe pointer is on mail */
+}
+
+/* Reduce margin for the h1 (name) */
+#mail h1 {
+    margin-bottom: 5px; /* Reduce the space below the name */
+}
+
+.container {
+    /* Make the container flexible for its content */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+/* Button Container */
+.button-container {
+    display: flex;  /* Enable flexbox */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px;               /* Space between buttons */
+}
+
+/* Button Styling */
+button {
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to keep main centered */
+    all: unset; /* Reset all inherited styles, including default styling */
+    background-color: #626262; /* Custom background color */
+    color: white;
+    border: none; /* Remove the default border */
+    padding: 10px 20px;
+    border-radius: 20px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #0d47a1; /* Change the background color when hovered */
+}
+
+/* Style for the header image */
+.header-image {
+    height: auto;
+    object-fit: cover;
+    width: 25%; /* Makes the image stretch the full width of the header */
+    max-height: 400px; /* Set a maximum height to prevent the image from being too tall */
+    object-fit: cover; /* Ensures the image scales properly without distortion */
+    display: block; /* Removes any extra spacing caused by inline elements */
+}
+
+/* Footer styling */
+footer {
+    padding: 0px;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 1.2rem;
+}
+
+footer {
+    /* Push footer to the bottom of the page */
+    text-align: center;
+    color: #ffffff;
+    font-size: 0.8rem;
+    margin-top: auto;
+    padding: 20px 0;
+  }

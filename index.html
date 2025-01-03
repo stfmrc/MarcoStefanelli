@@ -31,12 +31,16 @@
         <p>&copy; 2025 Marco Stefanelli</p>
         <div id="counter"></div>
         <script>
+          // Check if the page has been visited before using localStorage
           if (!localStorage.getItem('page_visited')) {
+            // If not visited before, initialize the count
             let count = parseInt(localStorage.getItem('page_count') || '0');
-            count++;
-            localStorage.setItem('page_count', count);
-            localStorage.setItem('page_visited', 'true');
+            count++; // Increment the counter
+            localStorage.setItem('page_count', count); // Save the new count
+            localStorage.setItem('page_visited', 'true'); // Mark the page as visited
           }
+        
+          // Update the page view counter in the DOM
           document.getElementById('counter').innerText = localStorage.getItem('page_count');
         </script>
     </footer>

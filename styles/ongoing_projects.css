@@ -121,14 +121,14 @@ video {
 }
 
 /* For screens smaller than 480px (mobile phones) */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     body header {
-        width: 95%; /* Make header almost full width */
+        width: 100%; /* Make header almost full width */
         padding: 1rem; /* Reduce padding more */
     }
 
     body main {
-        width: 95%; /* Main section takes almost full width */
+        width: 100%; /* Main section takes almost full width */
         font-size: 0.9rem; /* Further reduce font size */
         top: 160px; /* Adjust the position for small screens */
     }

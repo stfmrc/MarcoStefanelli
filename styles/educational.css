@@ -1,0 +1,148 @@
+
+
+/* Ongoing Projects Page */
+
+/* General Styles for html and body */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure full height */
+    background: linear-gradient(to bottom, #1a2b4c, #122040); /* Smooth gradient */
+    background-size: cover; /* Ensure gradient covers the page */
+    background-repeat: no-repeat; /* Prevent tiling */
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Stack header, main, and footer */
+    justify-content: space-between; /* Space between elements */
+    min-height: 100vh; /* Ensure full height of viewport */
+}
+
+
+/* Style for the header */
+/* Style for the header */
+header {
+    padding-top: 50px; /* Padding from the top of the page */
+    text-align: center; /* Center the header content */
+    font-size: 1.8rem; /* Adjust the size of the header text */
+    margin: 0 auto; /* Center the header horizontally */
+    margin-bottom: 10px; /* Reduce space below the header */
+    width: 60%; /* Restrict the width for better readability */
+    line-height: 1.5; /* Adjust line spacing */
+    color: white; /* Ensure text is visible if the background is dark */
+    border-radius: 25px; /* Rounded corners */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Adjust the heading size specifically */
+header h1 {
+    font-size: 1.5rem; /* Adjust the size of the heading */
+    font-weight: bold; /* Optional: Make the text bold */
+    margin: 0; /* Remove default margins */
+    line-height: 1.2; /* Adjust the spacing between lines */
+}
+
+/* Main Section */
+main {
+    /*flex: 1; /* Make the main section take up remaining space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 60%; /* Match the width of the header */
+    padding: 1rem;
+    margin-top: 10px; /* Reduce the space above the main section */
+    border-radius: 15px; /* Optional: Rounded corners */
+    text-align: justify; /* Justify-align text */
+    color: white; /* Text color */
+    font-size: 1.2rem; /* Font size for readability */
+    line-height: 1.5; /* Adjust line spacing */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    /*background: rgba(0, 0, 0, 0.7); /* Footer background */
+    width: 100%;
+}
+
+/* Video Section */
+video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional, to give a rounded look to the video */
+    display: flex;               /* Enable flexbox for video container */
+    justify-content: center;     /* Center the video horizontally */
+    align-items: center;         /* Center the video vertically inside the container */
+    width: 200px;                /* Set the width of the video */
+    height: 200px;               /* Set the height of the video */
+}
+
+a {
+    text-decoration: none;
+  }
+/* Responsive Styles */
+
+/* For screens smaller than 768px (tablets and mobile) */
+@media screen and (max-width: 768px) {
+    body header {
+        width: 90%; /* Make header almost full width */
+        padding: 1.5rem; /* Reduce padding */
+    }
+
+    body main {
+        width: 90%; /* Make main content width more responsive */
+        font-size: 1rem; /* Reduce font size for smaller screens */
+    }
+
+    .video-container {
+        width: 80%; /* Make video container responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    button {
+        font-size: 0.9rem; /* Adjust button font size */
+        padding: 8px 15px; /* Adjust button padding */
+    }
+
+    footer a {
+        font-size: 2rem; /* Reduce the arrow size */
+    }
+}
+
+/* For screens smaller than 480px (mobile phones) */
+@media screen and (max-width: 480px) {
+    body header {
+        width: 100%; /* Make header almost full width */
+        padding: 1rem; /* Reduce padding more */
+    }
+
+    body main {
+        width: 100%; /* Main section takes almost full width */
+        font-size: 0.9rem; /* Further reduce font size */
+    }
+
+    .video-container {
+        width: 100%; /* Make video container take full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    button {
+        font-size: 0.8rem; /* Reduce button font size more */
+        padding: 6px 12px; /* Reduce padding */
+    }
+
+    footer a {
+        font-size: 1.8rem; /* Reduce the arrow size even more */
+    }
+}

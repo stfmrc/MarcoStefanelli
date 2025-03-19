@@ -93,6 +93,62 @@ a {
   }
 /* Responsive Styles */
 
+main p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.tool-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.tool-list li {
+    margin-bottom: 15px;
+}
+
+.tool-list summary {
+    cursor: pointer;
+    color: #2a7ae2;
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.tool-list summary::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.2s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+
+details p {
+    margin: 10px 0;
+}
+
+button {
+    padding: 8px 16px;
+    background: #2a7ae2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #1e5bb8;
+}
+
+
+
+
 /* For screens smaller than 768px (tablets and mobile) */
 @media screen and (max-width: 768px) {
     body header {

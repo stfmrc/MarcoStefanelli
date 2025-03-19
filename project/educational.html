@@ -7,6 +7,9 @@
     <!-- Link to CSS -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/educational.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </head>
 <body class="educational"> <!-- Added class here -->
     <br><br>
@@ -16,20 +19,96 @@
     </header>
 
     <main>
-
-        <p>This page hosts a collection of <strong>interactive applications</strong> designed to support learning about <strong>climate change</strong>, <strong>weather forecasting</strong>, and <strong>data assimilation</strong>.
+        <p>This page hosts a collection of <strong>interactive applications</strong> designed to support learning about <strong>climate change</strong>, 
+            <strong>weather forecasting</strong>, and <strong>data assimilation</strong>. These tools are tailored for both <strong>high school</strong> 
+            and <strong>university-level</strong> lectures, making complex scientific concepts more accessible and engaging for students.</p>
     
-        These tools are tailored for both <strong>high school</strong> and <strong>university-level</strong> lectures, making complex scientific concepts more accessible and engaging for students.
-        
-        Whether you are a student or an educator, these applications provide a dynamic way to explore how the Earth's climate system works and how modern meteorology operates.</p>
+        <ul class="tool-list">
+            <li>
+                <details>
+                    <summary>Lorenz63 and Data Assimilation Tool</summary>
+                    <a href="../tools/1_lorenz-3dvar-project.zip" download>
+                        <button>Download Tool</button>
+                    </a>
+                    <p>
+                        This tool is designed for educational purposes and it is useful for understanding chaotic systems and 
+                        how forecasts can be improved by assimilating observations. 
+                        It integrate the Lorenz63 model and applies a data assimilation technique. 
+                        The Lorenz63 model is a simplified system that exhibits chaotic behavior, making it a suitable
+                        example for studying the impact of initial conditions on forecasts. It is defined by the following system
+                        of differential equations:
 
+                        <p>
+                            \[
+                            \begin{aligned}
+                            \frac{dx}{dt} &= \sigma (y - x) \\
+                            \frac{dy}{dt} &= x (\rho - z) - y \\
+                            \frac{dz}{dt} &= xy - \beta z
+                            \end{aligned}
+                            \]
+                        </p>
+
+
+                         
+                        The user can modify the model parameters,
+                        and initial conditions, and observe the impact on the forecast. The model integration is showed on an animation 
+                        where in red is the true state and in blue the forecast. Modifying the initial conditions of the forecast, 
+                        the user can see how the forecast diverge from the true state. Model parameters can also be modified.
+                        The data assimilation tool allows the user to assimilate observations into the model to improve the forecast.
+                        The observations are computed as perturbation of the true state, randomly adding or subtracting σ<sub>obs</sub>. 
+                        The user can modify the σ<sub>obs</sub> and obsercation step to see the impact on the forecast.
+                        The data assimilation technique used is a simplified version of the Kalman Filter, where the Kalman gain is defined as 
+
+                        \[
+                        \begin{aligned}
+                        K = \frac{\sigma_{obs}}{\sigma_{obs} + \sigma_{model}}
+                        \end{aligned}
+                        \]
+                        The user can also modify σ<sub>model</sub>.
+
+                        The analysis equations for the Lorenz63 components are:
+
+                        \[
+                        \begin{aligned}
+                        x_a &= x_f + K (x_o - x_f)\\
+                        y_a &= y_f + K (y_o - y_f)\\
+                        z_a &= z_f + K (z_o - z_f)
+                        \end{aligned}
+                        \]
+
+                        which are used to update the forecast with the observations. The user can see how the forecast is updated
+                        with the observations and how the forecast converges to the true state.
+                        <br><br>
+                        <br><br>
+
+                        Possibly question for students are:
+                        <br><br>
+                        <ul>
+                            <li>What is the difference between the true state and the forecast state?</li>
+                            <li>Why we can't forecast the trues state in real applications?</li>
+                            <li>Why we can't have accurate weather forecast for more than 4-5 days?</li>
+                            <li>What is the impact of the observation error on the forecast?</li>
+                            <li>What is the impact of the observation step on the forecast?</li>
+                            <li>How does the forecast improve when assimilating observations?</li>
+                            <li>Why is Data Assimilation usdeful in weather forecast?</li>
+                            <li>Could you provide other applications that can benefits of Data Assimilation?</li>
+
+                        </ul>
+
+                        
+                        
+
+
+                    </p>
+                    <a href="../tools/1_lorenz-3dvar-project.zip" download>
+                        <button>Download Tool</button>
+                    </a>
+                </details>
+            </li>
+    
+        </ul>
     </main>
 
-    <a href="../tools/1_lorenz-3dvar-project.zip" download>
-        <button style="padding: 10px 20px; background: #2a7ae2; color: white; border: none; border-radius: 5px; cursor: pointer;">
-          Download "Lorenz and Data assimilation tool"
-        </button>
-      </a>
 
     <footer>
         <p>&copy; 2025 Marco Stefanelli</p>

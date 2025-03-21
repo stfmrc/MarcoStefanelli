@@ -49,10 +49,10 @@
                         This tool is designed for educational purposes and it is useful for understanding chaotic systems and 
                         how forecasts can be improved by assimilating observations. 
                         It integrate the Lorenz63 model and applies a data assimilation technique. 
-                        The Lorenz63 model is a simplified system that exhibits chaotic behavior, making it a suitable
-                        example for studying the impact of initial conditions on forecasts. It is defined by the following system
-                        of differential equations:
-
+                        <br><br>
+                        The Lorenz63 model is a simplified system that exhibits chaotic behavior, 
+                        making it a suitable example for studying the impact of initial conditions on forecasts. 
+                        It consists of the following three ordinary differential equations 
                         <p>
                             \[
                             \begin{aligned}
@@ -62,23 +62,29 @@
                             \end{aligned}
                             \]
                         </p>
-
-
-                         
-                        The user can modify the model parameters,
-                        and initial conditions, and observe the impact on the forecast. The model integration is showed on an animation 
+                        
+                        The model describes the idealized motion of fluid convection, 
+                        and it shows how small differences in the initial state can lead to drastically different outcomes over time.
+                        In the field of weather forecasting, this sensitivity to initial conditions is a challenge for making accurate long-term predictions. 
+                        For these reasons, the Lorenz63 model is a classic example used to illustrate the concepts of chaos theory and the limitations of weather forecasting.
+                        Edward Lorenz coined the term "butterfly effect" during a 1972 conference in Washington, D.C., to describe the Lorenz63 model's sensitivity to initial conditions.
+                        <br><br>
+                        The tool allows users to interact with the Lorenz63 model and observe the forecast evolution over time.
+                        Model parameters, and initial conditions, can be modified to observe the impact on the forecast. 
+                        The model integration is showed on an animation 
                         where in red is the true state and in blue the forecast. Modifying the initial conditions of the forecast, 
-                        the user can see how the forecast diverge from the true state. Model parameters can also be modified.
+                        the user can see how the forecast diverge from the true state when the model integration goes far from initial conditions. 
+                        The model parameters can also be modified.
                         The data assimilation tool allows the user to assimilate observations into the model to improve the forecast.
                         The observations are computed as perturbation of the true state, randomly adding or subtracting σ<sub>obs</sub>. 
-                        The user can modify the σ<sub>obs</sub> and obsercation step to see the impact on the forecast.
-                        The data assimilation technique used is a simplified version of the Kalman Filter, where the Kalman gain is defined as 
+                        The user can modify the σ<sub>obs</sub> and observation step to see the impact on the forecast.
+                        The data assimilation technique used is a simplified version of the Kalman Filter (1DKF), where the Kalman gain is defined as 
 
                         \[
                          K = \frac{\sigma^2_{\text{model}}}{\sigma^2_{\text{model}} + \sigma^2_{\text{obs}}} 
                         \]
 
-                        The user can also modify σ<sub>model</sub>.
+                        The user can also modify σ<sub>model</sub> to directly modify the Kalman gain.
 
                         The analysis equations for the Lorenz63 components are:
 
@@ -90,8 +96,8 @@
                         \end{aligned}
                         \]
 
-                        which are used to update the forecast with the observations. The user can see how the forecast is updated
-                        with the observations and how the forecast converges to the true state.
+                        which are used to compute the analysis and update the initial conditions of the next forecast step. 
+                        The user can see how the forecast is updated with the observations and how the forecast is closer to the true state when data assimilation is used.
                         <br><br>
                         <br><br>
 

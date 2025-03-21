@@ -9,7 +9,22 @@
     <link rel="stylesheet" href="../styles/educational.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            displayMath: [['\\[', '\\]'], ['\\(', '\\)']]
+          },
+          svg: {
+            scale: 1
+          },
+          options: {
+            renderActions: {
+              addMenu: []
+            }
+          }
+        };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body class="educational"> <!-- Added class here -->
     <br><br>
@@ -60,10 +75,9 @@
                         The data assimilation technique used is a simplified version of the Kalman Filter, where the Kalman gain is defined as 
 
                         \[
-                        \begin{aligned}
-                        K = \frac{\sigma_{model}}{\sigma_{model} + \sigma_{obs}}
-                        \end{aligned}
+                         K = \frac{\sigma^2_{\text{model}}}{\sigma^2_{\text{model}} + \sigma^2_{\text{obs}}} 
                         \]
+
                         The user can also modify σ<sub>model</sub>.
 
                         The analysis equations for the Lorenz63 components are:

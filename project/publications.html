@@ -1,50 +1,73 @@
-<!DOCTYPE html><head>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-    <!-- SEO essentials -->
-    <title>Marco Stefanelli | Portfolio</title>
-    <meta name="description" content="Official portfolio of Marco Stefanelli. Discover my projects, skills, and professional background.">
-    <meta name="author" content="Marco Stefanelli">
-    <meta name="robots" content="index, follow">
-  
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="Marco Stefanelli | Portfolio">
-    <meta property="og:description" content="Visit Marco Stefanelli's portfolio to explore projects and skills.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://stfmrc.github.io/MarcoStefanelli/">
-    <title>Marco Stefanelli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ongoing-projects</title>
     <!-- Link to CSS -->
-    <link rel="stylesheet" type="text/css" href="./styles/normalize.css">
-    <link rel="stylesheet" type="text/css" href="./styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/educational.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        window.MathJax = {
+          tex: {
+            displayMath: [['\\[', '\\]'], ['\\(', '\\)']]
+          },
+          svg: {
+            scale: 1
+          },
+          options: {
+            renderActions: {
+              addMenu: []
+            }
+          }
+        };
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
+<body class="publications"> <!-- Added class here -->
+    <br><br>
+    <br><br>
+    <header>
+        <h1>Publications</h1>
+    </header>
 
-<body>
-    <div class="container">
-        <div class="header">
-            <img src="./images/ME2.jpg" alt="Marco Stefanelli" class="profile-image">
-            <h1>MARCO STEFANELLI</h1>
-            <div id="mail">
-                <p><a href="mailto:marco.stefanelli@fmf.uni-lj.si">marco.stefanelli@fmf.uni-lj.si</a></p>
-            </div>
-        </div>
-        <div class="button-container">
-            <button onclick="window.location.href='./project/about.html'">About</button>
-            <!-- <button onclick="window.location.href='../project/closed_projects.html'">Closed projects</button> -->
-            <button onclick="window.location.href='./project/ongoing_projects.html'">Ongoing project</button>
-            <button onclick="window.location.href='../project/publications.html'">Publications</button>
-            <button onclick="window.location.href='./project/educational.html'">Educational</button>
-            <!-- <button onclick="window.location.href='../project/Video.html'">Video</button> -->
-            <!-- <button onclick="window.location.href='../project/contact.html'">Contact</button> -->
-        </div>
-    </div>
+    <main>
+    
+        <ul class="tool-list">
+            <li>
+                <details>
+                    <summary>Data assimilation for advanced cross-scale unstructured grid ocean modelling</summary>
+
+                    <p>
+                        Coastal zones face growing threats from climate change, including sea-level rise and intensified storm activity. 
+                        Accurate numerical modelling is essential to predict the impacts of anthropogenic and climate stressors on the coastal zone. 
+                        However, it is also a very challenging environment due to complex coastlines, rapid topographic changes, and high spatial-temporal variability.
+                        Unstructured grid models offer a promising solution, yet their integration with advanced data assimilation (DA) methods remains limited. 
+                        This study presents the implementation of a 3D variational data assimilation (3DVar) scheme (OceanVar) within an unstructured-grid ocean model (SHYFEM). 
+                        A key innovation involves generalizing the first-order recursive filter for horizontal background error covariances to work with triangular unstructured meshes. 
+                        An experiment was conducted over the period 2017–2018, assimilating ARGO in-situ profiles, and sea level anomaly (SLA) data from altimetry satellite missions. 
+                        Results show substantial skill improvement against a control run without assimilation, particularly in the 100–500 m depth range, 
+                        where the mean absolute error was reduced by 25–30% through data assimilation. SLA assimilation had a more modest effect, improving MAE by about 
+                        3% overall and up to 20% locally, without degrading temperature or salinity estimates. The study demonstrates the feasibility and benefits of applying 
+                        a 3DVar scheme to unstructured grid ocean models, paving the way for more accurate and efficient coastal forecasting systems.
+                        
+                    </p>
+                    <a href="https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2025.1656879/full" >
+                        <button>Read the paper</button>
+                    </a>
+                </details>
+            </li>
+    
+        </ul>
+    </main>
+
+
     <footer>
         <p>&copy; 2025 Marco Stefanelli</p>
     </footer>
-    
+    <a href="../index.html">⬅️</a>
     <script>
         // Function to get current date and time in 'yyyy-mm-dd HH:mm:ss' format
         function getCurrentDateTime() {

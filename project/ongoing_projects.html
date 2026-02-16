@@ -1,149 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ongoing-projects</title>
-    <!-- Link to CSS -->
-    <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/ongoing_projects.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ongoing projects</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="stylesheet" href="../styles/educational.css" />
+
+  <!-- MathJax for LaTeX like \mathcal{H}, \, and dBZ units -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
 </head>
-<body class="ongoing-projects"> <!-- Added class here -->
-    <br><br>
-    <br><br>
-    <header>
-        <h1>A neural network-based observation operator for weather radar data assimilation</h1>
-    </header>
 
-    <main>
+<body class="ongoing-projects">
+  <header>
+    <h1>A neural network-based observation operator for weather radar data assimilation</h1>
+  </header>
 
-        <p>Forecasting convective storms is a major challenge in Numerical Weather Prediction (NWP). 
-            Data Assimilation (DA) improves the initial condition and subsequent forecasts by combining 
-            observations and previous model forecasts (background). Weather radar provides a dense source of observations in storm monitoring. 
-            Therefore, assimilating radar data should significantly improve storm forecasting skills. 
-            However, the short-range precipitation forecast performed by extrapolating rainfall patterns (nowcasting) 
-            from radar data is often better than numerical model-based forecasting with DA (Fabry and Meunier, 2020). 
-            This is related to the fact that the radar data only provides information on the precipitation pattern and intensity 
-            in the area affected by the storm. Furthermore, it does not directly provide information on the environmental conditions 
-            of the storm, such as temperature, wind, and humidity, neither within the precipitation region nor in the areas far from the storm. 
-            A potential solution involves using machine learning (ML) to construct the DA observation operator to generate a model-equivalent of the radar data. 
-            In this approach, NWP model fields (temperature, wind components, relative humidity) would serve as input, and radar observations 
-            would be the output of an encoder-decoder neural network. The constructed observation operator describes a non-linear relationship 
-            between the NWP model storm-related variables and radar observations, while its Jacobian allows radar information to infer other variables 
-            in the data assimilation, potentially enhancing storm forecasting skills. </p>
+  <main>
+    <p>
+      In three-dimensional variational data assimilation (3DVar) for numerical weather prediction (NWP),
+      the observation operator H plays a central role by mapping model state variables to an
+      observation equivalent. For weather radar, however, specifying H is particularly challenging:
+      reflectivity is a nonlinear, microphysics-dependent diagnostic quantity that only indirectly relates to the
+      model's prognostic variables, making traditional parameterised radar operators complex, regime-dependent,
+      and difficult to tune.
+    </p>
 
-        <!-- Video Section (Appears automatically when the page loads) -->
-            <video  autoplay loop>
-                <source src="../animation/RADAR_ROTATION_NO_Z.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <p>
+      In this study, we propose a neural-network (NN)-based observation operator for radar reflectivity and apply it
+      within a 3DVar data assimilation (DA) framework. Using five years (2019–2023) of radar reflectivity data from
+      the Lisca radar and 4.4km-resolution short-range forecasts from the ALADIN model over Slovenia, we train a
+      convolutional encoder–decoder neural network to map model temperature, humidity, horizontal wind components,
+      and surface pressure fields to radar reflectivity. Across independent test cases spanning clear-sky, stratiform,
+      and convective regimes, the NN-based operator accurately reproduces the spatial structure and intensity of
+      observed reflectivity, relying primarily on the model state in the vicinity of the observation point.
+    </p>
 
-    </main>
+    <p>
+      In the extreme precipitation case that caused widespread floods in Slovenia on August 4, 2023, assimilating the
+      full radar disc reduces the domain-averaged reflectivity root-mean-square error (RMSE) from 5.99dBZ to
+      3.47dBZ and improves the alignment between the analysed and observed convective bands.
+    </p>
 
-    <footer>
-        <p>&copy; 2025 Marco Stefanelli</p>
-    </footer>
-    <a href="../index.html">⬅️</a>
-    <script>
-        // Function to get current date and time in 'yyyy-mm-dd HH:mm:ss' format
-        function getCurrentDateTime() {
-            const now = new Date();
-            const date = now.toISOString().split('T')[0]; // Extracts 'yyyy-mm-dd' from ISO format
-            const time = now.toTimeString().split(' ')[0]; // Extracts 'HH:mm:ss' from time string
-            return `${date} ${time}`; // Combine both date and time
+    <p>
+      Embedded within 3DVar, the Jacobian of the NN observation operator allows radar reflectivity observations to
+      inform model state variables, producing corresponding analysis increments. The proposed NN radar observation
+      operator offers a flexible alternative to traditional parameterised radar operators for improving
+      convective-storm forecasts.
+    </p>
+    
+    <p>
+    <a href="https://arxiv.org/pdf/2512.18289" > <button> Read the preprint paper version</button></a>
+    </p>
+  </main>
+
+  <footer id="log-footer" style="cursor: pointer;">
+    <p>&copy; 2025 Marco Stefanelli</p>
+  </footer>
+
+  <nav>
+    <a href="../index.html" aria-label="Back to home">⬅️</a>
+  </nav>
+
+  <script>
+    // Format: yyyy-mm-dd HH:mm:ss
+    function getCurrentDateTime() {
+      const now = new Date();
+      const date = now.toISOString().split('T')[0];
+      const time = now.toTimeString().split(' ')[0];
+      return `${date} ${time}`;
+    }
+
+    function getPageKey() {
+      // Keep original key for storage uniqueness
+      return window.location.pathname || 'unknown-page';
+    }
+
+    function makeSafeFilename(input) {
+      // Remove slashes and other filename-hostile characters
+      return input.replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, '_');
+    }
+
+    const pageKey = getPageKey();
+    const storageCountKey = `${pageKey}-pageViewCount`;
+    const storageLogKey = `${pageKey}-logEntries`;
+
+    // Increment page view count on load
+    let pageViewCount = Number.parseInt(localStorage.getItem(storageCountKey), 10);
+    if (!Number.isFinite(pageViewCount)) pageViewCount = 0;
+    pageViewCount += 1;
+    localStorage.setItem(storageCountKey, String(pageViewCount));
+
+    function downloadLogFile() {
+      const action = prompt(
+        'Enter the password to download the log file.\n\nType "reset" to reset the counter and logs.'
+      );
+
+      const correctPassword = '3.1415926';
+
+      if (action === null) return; // user cancelled
+
+      // Reset flow
+      if (action.trim().toLowerCase() === 'reset') {
+        const resetPassword = prompt('Enter the password to reset the counter and logs:');
+        if (resetPassword !== correctPassword) {
+          alert('Incorrect password for reset!');
+          return;
         }
-    
-        // Generate a unique key for the page based on the URL or a custom identifier
-        function getPageKey() {
-            return window.location.pathname; // You can customize this if needed (e.g., use specific page IDs or URLs)
+
+        if (confirm('Are you sure you want to reset the counter and clear all log entries?')) {
+          localStorage.setItem(storageCountKey, '0');
+          localStorage.setItem(storageLogKey, '');
+          location.reload();
         }
-    
-        // Retrieve the page-specific counter and logs from localStorage
-        const pageKey = getPageKey(); // Use the URL path as a unique key for each page
-        let pageViewCount = parseInt(localStorage.getItem(`${pageKey}-pageViewCount`), 10) || 0;
-        const todayDateTime = getCurrentDateTime(); // Get current date and time
-    
-        // Increment the page view count
-        pageViewCount++;
-    
-        // Save the updated count back to localStorage (specific to this page)
-        localStorage.setItem(`${pageKey}-pageViewCount`, pageViewCount);
-    
-        // Retrieve previous log entries for this page from localStorage (if any)
-        let logEntries = localStorage.getItem(`${pageKey}-logEntries`);
-        if (!logEntries) {
-            logEntries = '';  // Initialize an empty log if no entries exist
-        }
-    
-        // Function to generate and download the log file for the current page
-        function downloadLogFile() {
-            // Ask for a password to protect the download and reset the counter
-            const passwordPrompt = prompt('Enter the password to download the log file.\n\nType "reset" to reset the counter and logs.');
-            
-            const correctPassword = '3.1415926'; // Change this to your desired password
-    
-            // If the user typed "reset", prompt for password to reset
-            if (passwordPrompt === 'reset') {
-                const resetPassword = prompt("Enter the password to reset the counter and logs:");
-                // Check if the entered password for reset is correct
-                if (resetPassword !== correctPassword) {
-                    alert('Incorrect password for reset!');
-                    return;  // Exit if the password is incorrect
-                }
-    
-                // If the password for reset is correct, confirm reset
-                if (confirm("Are you sure you want to reset the counter and clear all log entries?")) {
-                    // Reset the page view count and log entries for this page
-                    localStorage.setItem(`${pageKey}-pageViewCount`, 0);
-                    localStorage.setItem(`${pageKey}-logEntries`, '');
-    
-                    // Reload the page to reflect the reset (optional)
-                    location.reload(); // This refreshes the page to reset the display
-                }
-                return;  // Exit after the reset logic
-            }
-    
-            // Check if the entered password for download is correct
-            if (passwordPrompt !== correctPassword) {
-                alert('Incorrect password!');
-                return;  // Exit if the password is incorrect
-            }
-    
-            // Create the new log entry with date, time, and page view count
-            const newLogEntry = `Date and Time: ${todayDateTime}\nPage View Count: ${pageViewCount}\n`;
-    
-            // Prepend the new entry to the existing log entries
-            logEntries = newLogEntry + logEntries;
-    
-            // Save the updated log entries back to localStorage for this page
-            localStorage.setItem(`${pageKey}-logEntries`, logEntries);
-    
-            // Create the log file content (concatenating all previous entries)
-            const logContent = logEntries;
-    
-            // Create a Blob from the log content
-            const blob = new Blob([logContent], { type: 'text/plain' });
-    
-            // Create an object URL for the Blob
-            const url = URL.createObjectURL(blob);
-    
-            // Create a link element to trigger the download
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `${pageKey}-page-view-log.txt`; // Use the page-specific filename
-            document.body.appendChild(a);
-            a.click(); // Trigger the download
-            document.body.removeChild(a);
-    
-            // Revoke the object URL after download
-            URL.revokeObjectURL(url);
-        }
-    
-        // Ensure the DOM is fully loaded before attaching the event listener
-        document.addEventListener('DOMContentLoaded', function () {
-            // Add event listener for clicking on the footer to download the log
-            document.querySelector('footer').addEventListener('click', downloadLogFile);
-        });
-    </script>
+        return;
+      }
+
+      // Download flow
+      if (action !== correctPassword) {
+        alert('Incorrect password!');
+        return;
+      }
+
+      const nowStamp = getCurrentDateTime();
+      const previousLogs = localStorage.getItem(storageLogKey) || '';
+
+      // Log entry
+      const newLogEntry =
+        `Date and Time: ${nowStamp}\n` +
+        `Page View Count: ${pageViewCount}\n` +
+        `Page: ${pageKey}\n` +
+        `-----------------------------\n`;
+
+      const updatedLogs = newLogEntry + previousLogs;
+      localStorage.setItem(storageLogKey, updatedLogs);
+
+      // Download
+      const blob = new Blob([updatedLogs], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+
+      const a = document.createElement('a');
+      a.href = url;
+
+      const safeName = makeSafeFilename(pageKey);
+      a.download = `${safeName}-page-view-log.txt`;
+
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      URL.revokeObjectURL(url);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const footer = document.getElementById('log-footer');
+      if (footer) footer.addEventListener('click', downloadLogFile);
+    });
+  </script>
 </body>
 </html>

@@ -1,186 +1,524 @@
-/* Basic Reset */
+/* =========================================================
+   BASIC RESET
+   ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-size: clamp(16px, 1vw, 28px);
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
     font-kerning: normal;
 }
 
 
+/* =========================================================
+   HTML / BODY
+   ========================================================= */
 
-/* Body Styles */
-html, body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column; /* Stack the header, main, and footer */
-    justify-content: space-between; /* Ensure space between elements */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text */    
-    justify-content: flex-start; /* Align content to the top */
-    font-kerning: normal;
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center;     /* Center content horizontally */
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(to bottom, #00000090, #0b3487); /* Gradient background */
-    background-size: cover; /* Ensure background covers the entire page */
-    background-repeat: no-repeat; /* Prevent tiling */
-    /*background-attachment: fixed; /* This will make the background stay fixed when scrolling */
-
-    color: white; /* Text color */
-}
-
-/* Ensure the background doesn't change size or position when scrolling */
 html {
-    height: 100%;
+    min-height: 100%;
 }
 
 body {
-    overflow-x: hidden; /* Prevent horizontal scroll */
     min-height: 100vh;
+    width: 100%;
 
-
-}
-
-/* Header Styles */
-header {
-    display: flex; /* Enable flexbox layout */
-    flex-direction: column;
-    /*background-color: rgba(4, 40, 73, 0.934); /* Semi-transparent background */
-    color: white;
-    padding: 2rem;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    width: 60%;             /* Adjust width as needed */
-    border-radius: 15px;    /* Rounded corners */
-    /*box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-    margin-bottom: 40px;    /* Space between header and button container */
-}
-
-
-/* email style */
-#mail p {
-    font-size:1px !important; 
-    margin-top: 0;
-    margin-bottom: 10px;    
-    color: white; 
-    text-align: center; 
-}
-
-
-/* stylish icon */
-#mail p::before {
-    content: "\2709";             /* ✉ */
-    font-size: 25px;
-    width: 28px;
-    height: 28px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    backdrop-filter: blur(4px);   /* works nicely on dark backgrounds */
-    transition: transform 0.2s ease, box-shadow 0.2s ease,
-                background 0.2s ease;
-}
-
-
-/* orcid style */
-#orcid p {
-    font-size:1px !important; 
-    margin-top: 0;
-    margin-bottom: 10px;    
-    color: white; 
-    text-align: center; 
-}
-
-p a {
-    text-decoration: none; /* no underline */
-    color: #fcfcfc; 
-}
-
-p a:hover {
-    text-decoration: underline; /* add underline whe pointer is on mail */
-}
-
-/* Reduce margin for the h1 (name) */
-#mail h1 {
-    margin-bottom: 5px; /* Reduce the space below the name */
-}
-
-.container {
-    /* Make the container flexible for its content */
-    flex: 1;
     display: flex;
     flex-direction: column;
+
+    overflow-x: hidden;
+
+    text-align: center;
+
+    color: white;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    font-size: clamp(16px, 1vw, 20px);
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.56),
+            #0b3487
+        );
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.container {
+    flex: 1;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
     justify-content: center;
     align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    width: min(700px, 90%);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
     padding: 20px;
-  }
 
-/* Button Container */
-.button-container {
-    display: flex;  /* Enable flexbox */
-    justify-content: center; /* Center buttons horizontally */
-    gap: 10px;               /* Space between buttons */
+    margin-bottom: 35px;
 }
 
-/* Button Styling */
-button {
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to keep main centered */
-    all: unset; /* Reset all inherited styles, including default styling */
-    background-color: #626262; /* Custom background color */
-    color: white;
-    border: none; /* Remove the default border */
-    padding: 10px 20px;
-    border-radius: 20px; /* Rounded corners */
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
-}
 
-/* Button Hover Effect */
-button:hover {
-    background-color: #0d47a1; /* Change the background color when hovered */
-}
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
 
-/* Style for the header image */
-.header-image {
-    height: auto;
+.profile-image {
+    width: clamp(150px, 18vw, 240px);
+    height: clamp(150px, 18vw, 240px);
+
     object-fit: cover;
-    width: 25%; /* Makes the image stretch the full width of the header */
-    max-height: 400px; /* Set a maximum height to prevent the image from being too tall */
-    object-fit: cover; /* Ensures the image scales properly without distortion */
-    display: block; /* Removes any extra spacing caused by inline elements */
+
+    border-radius: 50%;
+
+    display: block;
+
+    margin-bottom: 24px;
+
+    border: 3px solid rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
-/* Footer styling */
+.profile-image:hover {
+    transform: scale(1.02);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
+   NAME
+   ========================================================= */
+
+h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+
+    font-weight: 600;
+
+    letter-spacing: 0.06em;
+
+    line-height: 1.15;
+
+    margin-bottom: 10px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   PROFESSIONAL TAGLINE
+   ========================================================= */
+
+.tagline {
+    margin-top: 5px;
+    margin-bottom: 22px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+
+    font-weight: 300;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   GENERAL LINKS
+   ========================================================= */
+
+a {
+    color: inherit;
+}
+
+a:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   ORCID
+   ========================================================= */
+
+#orcid {
+    margin-bottom: 8px;
+}
+
+#orcid p {
+    margin: 0;
+
+    text-align: center;
+}
+
+.orcid-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color: rgba(255, 255, 255, 0.95);
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    line-height: 1.4;
+
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+}
+
+.orcid-badge img {
+    width: 18px;
+    height: 18px;
+
+    display: block;
+}
+
+.orcid-badge:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.orcid-label {
+    font-weight: 500;
+}
+
+.orcid-id {
+    font-weight: 300;
+}
+
+
+/* =========================================================
+   EMAIL
+   ========================================================= */
+
+#mail {
+    margin-top: 4px;
+}
+
+#mail p {
+    margin: 0;
+
+    color: white;
+
+    text-align: center;
+}
+
+#mail p::before {
+    content: "\2709";
+
+    margin-right: 7px;
+
+    font-size: 1.1rem;
+
+    vertical-align: middle;
+}
+
+#mail a {
+    color: rgba(255, 255, 255, 0.9);
+
+    text-decoration: none;
+
+    font-size: 0.95rem;
+
+    transition:
+        color 0.2s ease,
+        text-decoration-color 0.2s ease;
+}
+
+#mail a:hover {
+    color: #ffffff;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.button-container {
+    width: min(900px, 95%);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* =========================================================
+   NAVIGATION BUTTONS
+   ========================================================= */
+
+.nav-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 120px;
+
+    padding: 11px 22px;
+
+    border-radius: 22px;
+
+    background-color: rgba(98, 98, 98, 0.75);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 1rem;
+
+    font-weight: 400;
+
+    letter-spacing: 0.01em;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.nav-button:hover {
+    background-color: #0d47a1;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 15px rgba(0, 0, 0, 0.22);
+}
+
+.nav-button:active {
+    transform: translateY(0);
+}
+
+.nav-button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
 footer {
-    padding: 0px;
     width: 100%;
+
+    margin-top: auto;
+
+    padding: 18px 15px;
+
+    text-align: center;
+
+    color: rgba(255, 255, 255, 0.7);
 }
 
 footer p {
     margin: 0;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.02em;
 }
 
 footer a {
-    text-decoration: none;
     color: inherit;
-    font-size: 1.2rem;
+
+    text-decoration: none;
 }
 
-footer {
-    /* Push footer to the bottom of the page */
-    text-align: center;
-    color: #ffffff;
-    font-size: 0.8rem;
-    margin-top: auto;
-    padding: 20px 0;
-  }
+footer a:hover {
+    color: white;
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 30px 18px;
+    }
+
+    .header {
+        width: 95%;
+
+        padding: 15px;
+
+        margin-bottom: 25px;
+    }
+
+    h1 {
+        font-size: clamp(1.9rem, 8vw, 2.8rem);
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .button-container {
+        gap: 10px;
+    }
+
+    .nav-button {
+        min-width: 140px;
+
+        padding: 10px 18px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 520px) {
+
+    .container {
+        justify-content: flex-start;
+
+        padding-top: 35px;
+    }
+
+    .profile-image {
+        width: 150px;
+        height: 150px;
+
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+
+        letter-spacing: 0.04em;
+    }
+
+    .tagline {
+        font-size: 0.95rem;
+
+        margin-bottom: 18px;
+    }
+
+    .orcid-badge {
+        font-size: 0.88rem;
+    }
+
+    #mail a {
+        font-size: 0.88rem;
+    }
+
+    .button-container {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+    .nav-button {
+        width: min(280px, 90%);
+
+        min-width: 0;
+
+        padding: 11px 16px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.75rem;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}

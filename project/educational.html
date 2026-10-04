@@ -1,187 +1,624 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ongoing-projects</title>
-    <!-- Link to CSS -->
+
+    <title>Outreach & Education | Marco Stefanelli</title>
+
+    <meta
+        name="description"
+        content="Interactive educational tools and outreach projects by Marco Stefanelli on climate change, weather forecasting, chaos, and data assimilation."
+    >
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/educational.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- MathJax -->
     <script>
         window.MathJax = {
-          tex: {
-            displayMath: [['\\[', '\\]'], ['\\(', '\\)']]
-          },
-          svg: {
-            scale: 1
-          },
-          options: {
-            renderActions: {
-              addMenu: []
+            tex: {
+                inlineMath: [
+                    ['$', '$'],
+                    ['\\(', '\\)']
+                ],
+                displayMath: [
+                    ['\\[', '\\]']
+                ]
+            },
+            svg: {
+                fontCache: 'global'
             }
-          }
         };
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    </script>
+
+    <script
+        async
+        id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <!-- Small fixes for this page only -->
+    <style>
+
+        body.educational main {
+            width: 60%;
+
+            margin: 10px auto 0;
+
+            padding: 1rem;
+
+            display: block;
+
+            color: white;
+
+            font-size: 1.2rem;
+            line-height: 1.6;
+
+            text-align: justify;
+        }
+
+
+        body.educational header {
+            margin-top: 40px;
+        }
+
+
+        body.educational main p {
+            margin-bottom: 22px;
+        }
+
+
+        body.educational .action-link {
+            display: inline-block;
+
+            margin: 10px 0 20px;
+
+            padding: 9px 17px;
+
+            background-color: #2a7ae2;
+
+            color: white;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        body.educational .action-link:hover {
+            background-color: #1e5bb8;
+
+            color: white;
+
+            text-decoration: none;
+
+            transform: translateY(-1px);
+        }
+
+
+        body.educational .equation {
+            margin: 25px 0;
+
+            text-align: center;
+        }
+
+
+        body.educational .questions {
+            margin: 20px 0 25px;
+
+            padding-left: 25px;
+        }
+
+
+        body.educational .questions li {
+            margin-bottom: 10px;
+        }
+
+
+        body.educational .instructions {
+            margin-top: 30px;
+
+            padding: 18px 20px;
+
+            border-radius: 8px;
+
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+
+        body.educational .instructions h3 {
+            margin-bottom: 10px;
+        }
+
+
+        body.educational .language-label {
+            display: inline-block;
+
+            margin-bottom: 8px;
+        }
+
+
+        body.educational .back-home {
+            display: block;
+
+            margin: 10px auto 20px;
+
+            text-align: center;
+
+            font-size: 1.8rem;
+
+            text-decoration: none;
+        }
+
+
+        @media screen and (max-width: 768px) {
+
+            body.educational main {
+                width: 90%;
+
+                font-size: 1rem;
+
+                text-align: left;
+            }
+
+        }
+
+
+        @media screen and (max-width: 480px) {
+
+            body.educational main {
+                width: 95%;
+
+                padding: 0.8rem;
+            }
+
+        }
+
+    </style>
+
 </head>
-<body class="educational"> <!-- Added class here -->
-    <br><br>
-    <br><br>
+
+
+<body class="educational">
+
     <header>
-        <h1>A collection of interactive applications designed to support learning about climate change, weather forecasting, and data assimilation</h1>
+
+        <h1>
+            Interactive applications for learning about climate change,
+            weather forecasting, and data assimilation
+        </h1>
+
     </header>
 
+
     <main>
-        <p>This page hosts a collection of <strong>interactive applications and projects</strong> designed to support learning about <strong>climate change</strong>, 
-            <strong>weather forecasting</strong>, and <strong>data assimilation</strong>. These tools are tailored for both <strong>high school</strong> 
-            and <strong>university-level</strong> lectures, making complex scientific concepts more accessible and engaging for students.</p>
-    
+
+        <p>
+            This page hosts a collection of
+            <strong>interactive applications and educational projects</strong>
+            designed to support learning about
+            <strong>climate change</strong>,
+            <strong>weather forecasting</strong>,
+            and <strong>data assimilation</strong>.
+
+            The materials are intended for both secondary-school and
+            university-level teaching, with the aim of making complex
+            scientific concepts more accessible and engaging.
+        </p>
+
+
         <ul class="tool-list">
+
+            <!-- =====================================================
+                 LORENZ-63 TOOL
+                 ===================================================== -->
+
             <li>
+
                 <details>
-                    <summary>WebApp - Lorenz63 and Data Assimilation Tool</summary>
-                    <a href="../tools/1_lorenz-3dvar-project.zip" download>
-                        <button>Download Tool</button>
+
+                    <summary>
+                        Web application — Lorenz-63 and Data Assimilation Tool
+                    </summary>
+
+
+                    <a
+                        class="action-link"
+                        href="../tools/1_lorenz-3dvar-project.zip"
+                        download
+                    >
+                        Download Tool
                     </a>
+
+
                     <p>
-                        This tool is designed for educational purposes and it is useful for understanding chaotic systems and 
-                        how forecasts can be improved by assimilating observations. 
-                        It integrates the Lorenz63 model and applies a data assimilation technique. 
-                        <br><br>
-                        The Lorenz63 model is a simplified system that exhibits chaotic behavior, 
-                        making it a suitable example for studying the impact of initial conditions on forecasts. 
-                        It consists of the following three ordinary differential equations 
-                        <p>
-                            \[
-                            \begin{aligned}
-                            \frac{dx}{dt} &= \sigma (y - x) \\
-                            \frac{dy}{dt} &= x (\rho - z) - y \\
-                            \frac{dz}{dt} &= xy - \beta z
-                            \end{aligned}
-                            \]
-                        </p>
-                        
-                        The model describes the idealized motion of fluid convection, 
-                        and it shows how small differences in the initial state can lead to drastically different outcomes over time.
-                        In the field of weather forecasting, this sensitivity to initial conditions is a challenge for making accurate long-term predictions. 
-                        For these reasons, the Lorenz63 model is a classic example which is used to illustrate the concepts of chaos theory and the limitations of weather forecasting.
-                        Edward Lorenz coined the term "butterfly effect" during a 1972 conference in Washington, D.C., to describe the Lorenz63 model's sensitivity to initial conditions.
-                        <br><br>
-                        The tool allows users to interact with the Lorenz63 model and observe the forecast evolution over time.
-                        Model parameters, and initial conditions, can be modified to observe the impact on the forecast. 
-                        The model integration is showed on an animation 
-                        where in red is the true state and in blue the forecast. Modifying the initial conditions of the forecast, 
-                        the user can see how the forecast diverge from the true state when the model integration goes far from initial conditions. 
-                        The model parameters can also be modified.
-                        <br><br>
-                        The data assimilation part of the tool allows the user to assimilate observations into the model to improve the forecast.
-                        The observations are computed as perturbation of the true state, randomly adding or subtracting σ<sub>obs</sub>. 
-                        The user can modify the σ<sub>obs</sub> and observation step to see the impact on the forecast.
-                        The data assimilation technique which has been used is a simplified version of the Kalman Filter (1DKF), where the Kalman gain is defined as 
+                        This tool is designed for educational purposes and can
+                        be used to explore chaotic systems and understand how
+                        forecasts can be improved through the assimilation of
+                        observations.
 
-                        \[
-                         K = \frac{\sigma^2_{\text{model}}}{\sigma^2_{\text{model}} + \sigma^2_{\text{obs}}} 
-                        \]
+                        It combines the Lorenz-63 model with a simplified
+                        data-assimilation method.
+                    </p>
 
-                        The user can also modify σ<sub>model</sub> to directly modify the Kalman gain.
 
-                        The analysis equations for the Lorenz63 components are:
+                    <p>
+                        The Lorenz-63 model is a simplified dynamical system
+                        that exhibits chaotic behaviour, making it a useful
+                        example for studying the sensitivity of forecasts to
+                        their initial conditions.
+
+                        It consists of three ordinary differential equations:
+                    </p>
+
+
+                    <div class="equation">
 
                         \[
                         \begin{aligned}
-                        x_a &= x_f + K (x_o - x_f)\\
-                        y_a &= y_f + K (y_o - y_f)\\
-                        z_a &= z_f + K (z_o - z_f)
+                        \frac{dx}{dt} &= \sigma (y - x) \\
+                        \frac{dy}{dt} &= x (\rho - z) - y \\
+                        \frac{dz}{dt} &= xy - \beta z
                         \end{aligned}
                         \]
 
-                        which are used to compute the analysis and update the initial conditions of the next forecast step. 
-                        The user can see how the forecast is updated with the observations and how the forecast is closer to the true state when data assimilation is used.
-                        <br><br>
-                        <br><br>
-
-                        Questions for students are:
-                        <br><br>
-                        <ul>
-                            <li>What is the difference between the true state and the forecast state?</li>
-                            <li>Why can't we forecast the true state in real applications?</li>
-                            <li>Why can't we have accurate weather forecasts for more than 4-5 days?</li>
-                            <li>How does the forecast improve when assimilating observations?</li>
-                            <li>What is the impact of observation error on the analysis and consequently on the forecast?</li>
-                            <li>What is the impact of the observation step on the analysis and consequently on the forecast?</li>
-                            <li>What happens if σ<sub>model</sub> >> σ<sub>obs</sub>?</li>
-                            <li>What happens if σ<sub>obs</sub> >> σ<sub>model</sub>?</li>
-                            <li>What happens if σ<sub>obs</sub> = σ<sub>model</sub>?</li>
-                            <li>Why is Data Assimilation useful in weather forecasting?</li>
-                            <li>Could you provide other applications that could benefit from Data Assimilation?</li>
-                        </ul>
-
-                        <br><br>
-                        HOW TO USE THE TOOL:
-                    </p>Download the tool and unzip it. Open the folder and click on the executable file named index.html.
-                        The tool will open in your browser.</p>
-                        
-                        
+                    </div>
 
 
+                    <p>
+                        The model provides an idealised representation of fluid
+                        convection and illustrates how small differences in the
+                        initial state can lead to increasingly different
+                        trajectories over time.
+
+                        In weather forecasting, this sensitivity to initial
+                        conditions is one of the reasons why forecast uncertainty
+                        increases with lead time.
+
+                        The Lorenz-63 system is therefore a classic example for
+                        introducing deterministic chaos and the limitations of
+                        predictability.
                     </p>
-                    <a href="../tools/1_lorenz-3dvar-project.zip" download>
-                        <button>Download Tool</button>
+
+
+                    <p>
+                        The tool allows users to interact with the Lorenz-63
+                        model and observe how a forecast evolves over time.
+
+                        Model parameters and initial conditions can be modified
+                        to investigate their effect on the forecast trajectory.
+
+                        The animation compares the true state with a forecast,
+                        allowing users to observe how initially similar
+                        trajectories progressively diverge.
+                    </p>
+
+
+                    <p>
+                        The data-assimilation component allows observations to
+                        be incorporated into the model in order to improve the
+                        forecast.
+
+                        Synthetic observations are generated by perturbing the
+                        true state according to the prescribed observation
+                        uncertainty,
+                        \(\sigma_{\text{obs}}\).
+
+                        Users can modify both the observation uncertainty and
+                        the observation interval to explore how these choices
+                        affect the analysis and subsequent forecast.
+                    </p>
+
+
+                    <p>
+                        The data-assimilation method is a simplified
+                        one-dimensional Kalman-filter formulation.
+
+                        The Kalman gain is defined as:
+                    </p>
+
+
+                    <div class="equation">
+
+                        \[
+                        K =
+                        \frac{
+                            \sigma^2_{\text{model}}
+                        }{
+                            \sigma^2_{\text{model}}
+                            +
+                            \sigma^2_{\text{obs}}
+                        }
+                        \]
+
+                    </div>
+
+
+                    <p>
+                        Users can also modify
+                        \(\sigma_{\text{model}}\),
+                        which directly affects the Kalman gain and therefore
+                        the relative weight given to the model forecast and the
+                        observations.
+                    </p>
+
+
+                    <p>
+                        The analysis equations for the three Lorenz-63
+                        components are:
+                    </p>
+
+
+                    <div class="equation">
+
+                        \[
+                        \begin{aligned}
+                        x_a &= x_f + K(x_o - x_f) \\
+                        y_a &= y_f + K(y_o - y_f) \\
+                        z_a &= z_f + K(z_o - z_f)
+                        \end{aligned}
+                        \]
+
+                    </div>
+
+
+                    <p>
+                        These equations are used to compute the analysis,
+                        which then provides the initial conditions for the next
+                        forecast cycle.
+
+                        The user can therefore observe how repeated assimilation
+                        of observations helps keep the forecast closer to the
+                        true state.
+                    </p>
+
+
+                    <h3>Questions for students</h3>
+
+
+                    <ul class="questions">
+
+                        <li>
+                            What is the difference between the true state and
+                            the forecast state?
+                        </li>
+
+                        <li>
+                            Why is the true atmospheric state never known exactly
+                            in real forecasting applications?
+                        </li>
+
+                        <li>
+                            Why does forecast skill generally decrease as lead
+                            time increases?
+                        </li>
+
+                        <li>
+                            How does the forecast change when observations are
+                            assimilated?
+                        </li>
+
+                        <li>
+                            What is the impact of observation uncertainty on the
+                            analysis and subsequent forecast?
+                        </li>
+
+                        <li>
+                            What is the impact of the observation interval on
+                            the analysis and subsequent forecast?
+                        </li>
+
+                        <li>
+                            What happens when
+                            \(\sigma_{\text{model}} \gg \sigma_{\text{obs}}\)?
+                        </li>
+
+                        <li>
+                            What happens when
+                            \(\sigma_{\text{obs}} \gg \sigma_{\text{model}}\)?
+                        </li>
+
+                        <li>
+                            What happens when
+                            \(\sigma_{\text{obs}} = \sigma_{\text{model}}\)?
+                        </li>
+
+                        <li>
+                            Why is data assimilation useful in weather forecasting?
+                        </li>
+
+                        <li>
+                            What other applications could benefit from data
+                            assimilation?
+                        </li>
+
+                    </ul>
+
+
+                    <div class="instructions">
+
+                        <h3>How to use the tool</h3>
+
+                        <p>
+                            Download the ZIP archive and extract it.
+                            Open the extracted folder and then open
+                            <strong>index.html</strong> in a web browser.
+                        </p>
+
+                    </div>
+
+
+                    <a
+                        class="action-link"
+                        href="../tools/1_lorenz-3dvar-project.zip"
+                        download
+                    >
+                        Download Tool
                     </a>
 
-                   
-            
                 </details>
 
             </li>
 
-            <li>
-                <details>
-                    <summary>Project - Dal Meteo all'Emergenza Climatica: un percorso educativo tra scienza, consapevolezza e futuro</summary>
-                    <a href="../pdf/Progetto_Simone.pdf" >
-                        <button>Read the project report</button></a>
-                        <p>
-      <strong>IT</strong> - Il progetto <strong>“Dal Meteo all’Emergenza Climatica: un percorso educativo tra scienza, consapevolezza e futuro”</strong>,
-      sviluppato in collaborazione con il professor Simone Napolitano,
-      è un percorso interdisciplinare di circa <strong>20 ore</strong> rivolto alla classe <strong>2LD</strong> del Liceo Artistico
-      “G. Romano” di Mantova, che integra Educazione civica, Scienze, Matematica e Informatica. L’obiettivo è sviluppare negli studenti una comprensione
-      scientificamente fondata del cambiamento climatico, distinguendo in modo rigoroso <strong>meteo</strong> e <strong>clima</strong>,
-      contrastando misconcezioni diffuse e potenziando competenze di analisi dei dati, valutazione critica delle fonti e cittadinanza attiva.
-      Il percorso prevede un test diagnostico iniziale; una fase di ricerca cooperativa sul tema dell'emergenza climatica
-      con produzione di elaborati multimediali e successiva discussione; due lezioni su caos deterministico,
-      affidabilità delle previsioni, fake news e lettura di grafici/indicatori (IPCC, Copernicus, ECMWF, NASA). La valutazione avviene
-      tramite rubrica multidimensionale (contenuti, competenze, soft skills), evidenziando punti di forza e criticità, in particolare
-      sull’uso delle fonti e sulle relazioni causa–effetto. Il progetto si propone come modello replicabile nel biennio e ampliabile nel
-      triennio con approfondimenti su teoria del caos e sistemi complessi.
-    </p>
 
-    <p>
-        <strong>ENG</strong> - The project <strong>“From Weather to the Climate Emergency: an educational pathway between science, awareness, and the future”</strong>,
-developed in collaboration with Professor Simone Napolitano,
-is an interdisciplinary program of about <strong>20 hours</strong> designed for class <strong>2LD</strong> at the “G. Romano” Art High School
-in Mantua, integrating Civic Education, Science, Mathematics, and Computer Science. The aim is to help students develop a scientifically grounded
-understanding of climate change by rigorously distinguishing between <strong>weather</strong> and <strong>climate</strong>,
-countering widespread misconceptions and strengthening skills in data analysis, critical evaluation of sources, and active citizenship.
-The program includes an initial diagnostic test; a phase of cooperative research on the topic of the climate emergency
-with the production of multimedia works and a subsequent discussion; and two lessons on deterministic chaos,
-the reliability of forecasts, fake news, and interpreting graphs/indicators (IPCC, Copernicus, ECMWF, NASA). Assessment is carried out
-through a multidimensional rubric (content, competencies, soft skills), highlighting strengths and critical issues, particularly
-in the use of sources and in understanding cause-and-effect relationships. The project is proposed as a replicable model for the first two years
-and can be expanded in the final three years with further study of chaos theory and complex systems.
-    </p>
-            </details>
+            <!-- =====================================================
+                 CLIMATE EDUCATION PROJECT
+                 ===================================================== -->
+
+            <li>
+
+                <details>
+
+                    <summary>
+                        Project — Dal Meteo all'Emergenza Climatica:
+                        un percorso educativo tra scienza,
+                        consapevolezza e futuro
+                    </summary>
+
+
+                    <a
+                        class="action-link"
+                        href="../pdf/Progetto_Simone.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Read the project report
+                    </a>
+
+
+                    <p>
+
+                        <strong class="language-label">IT</strong><br>
+
+                        Il progetto
+                        <strong>
+                            “Dal Meteo all’Emergenza Climatica:
+                            un percorso educativo tra scienza,
+                            consapevolezza e futuro”
+                        </strong>,
+                        sviluppato in collaborazione con il professor
+                        Simone Napolitano, è un percorso interdisciplinare
+                        di circa <strong>20 ore</strong> rivolto alla classe
+                        <strong>2LD</strong> del Liceo Artistico
+                        “G. Romano” di Mantova.
+
+                        Il progetto integra Educazione civica, Scienze,
+                        Matematica e Informatica.
+
+                        L’obiettivo è sviluppare negli studenti una comprensione
+                        scientificamente fondata del cambiamento climatico,
+                        distinguendo in modo rigoroso
+                        <strong>meteo</strong> e <strong>clima</strong>,
+                        contrastando misconcezioni diffuse e potenziando
+                        competenze di analisi dei dati, valutazione critica
+                        delle fonti e cittadinanza attiva.
+                    </p>
+
+
+                    <p>
+                        Il percorso prevede un test diagnostico iniziale,
+                        una fase di ricerca cooperativa sul tema
+                        dell'emergenza climatica con produzione di elaborati
+                        multimediali e successiva discussione, e due lezioni
+                        dedicate a caos deterministico, affidabilità delle
+                        previsioni, fake news e lettura di grafici e indicatori
+                        provenienti da fonti quali IPCC, Copernicus, ECMWF
+                        e NASA.
+
+                        La valutazione avviene tramite una rubrica
+                        multidimensionale che considera contenuti,
+                        competenze e soft skills, evidenziando punti di forza
+                        e criticità, in particolare nell’uso delle fonti e
+                        nella comprensione delle relazioni causa–effetto.
+
+                        Il progetto si propone come modello replicabile nel
+                        biennio e ampliabile nel triennio con approfondimenti
+                        su teoria del caos e sistemi complessi.
+                    </p>
+
+
+                    <p>
+
+                        <strong class="language-label">ENG</strong><br>
+
+                        The project
+                        <strong>
+                            “From Weather to the Climate Emergency:
+                            an educational pathway between science,
+                            awareness, and the future”
+                        </strong>,
+                        developed in collaboration with Professor Simone
+                        Napolitano, is an interdisciplinary programme of
+                        approximately <strong>20 hours</strong> designed for
+                        class <strong>2LD</strong> at the “G. Romano” Art
+                        High School in Mantua.
+
+                        It integrates Civic Education, Science, Mathematics,
+                        and Computer Science.
+
+                        The aim is to help students develop a scientifically
+                        grounded understanding of climate change by rigorously
+                        distinguishing between <strong>weather</strong> and
+                        <strong>climate</strong>, addressing common
+                        misconceptions, and strengthening skills in data
+                        analysis, critical evaluation of sources, and active
+                        citizenship.
+                    </p>
+
+
+                    <p>
+                        The programme includes an initial diagnostic test,
+                        a cooperative research phase on the climate emergency
+                        with the production and discussion of multimedia
+                        materials, and two lessons on deterministic chaos,
+                        forecast reliability, misinformation, and the
+                        interpretation of graphs and indicators from sources
+                        such as IPCC, Copernicus, ECMWF, and NASA.
+
+                        Assessment is carried out using a multidimensional
+                        rubric covering knowledge, competencies, and soft
+                        skills, with particular attention to the use of sources
+                        and understanding of cause-and-effect relationships.
+
+                        The project is intended as a replicable model for the
+                        first two years of secondary school and can be extended
+                        in later years through further study of chaos theory
+                        and complex systems.
+                    </p>
+
+                </details>
+
             </li>
-          
-    
+
         </ul>
+
     </main>
 
 
     <footer>
-        <p>&copy; 2025 Marco Stefanelli</p>
+        <p>&copy; 2026 Marco Stefanelli</p>
     </footer>
-    <a href="../index.html">⬅️</a>
+
+
+    <nav aria-label="Back to homepage">
+
+        <a
+            class="back-home"
+            href="../index.html"
+            aria-label="Back to homepage"
+        >
+            ⬅️
+        </a>
+
+    </nav>
+
 </body>
+
 </html>

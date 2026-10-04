@@ -1,68 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- SEO essentials -->
-  <title>Marco Stefanelli | Portfolio</title>
-  <meta name="description" content="Official portfolio of Marco Stefanelli. Discover my projects, skills, and professional background." />
-  <meta name="author" content="Marco Stefanelli" />
-  <meta name="robots" content="index, follow" />
+    <!-- SEO -->
+    <title>Marco Stefanelli | Machine Learning & Earth System Science</title>
 
-  <!-- Open Graph for social sharing -->
-  <meta property="og:title" content="Marco Stefanelli | Portfolio" />
-  <meta property="og:description" content="Visit Marco Stefanelli's portfolio to explore projects and skills." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://stfmrc.github.io/MarcoStefanelli/" />
+    <meta
+        name="description"
+        content="Portfolio of Marco Stefanelli, a machine-learning scientist working on Earth observation, weather and climate science, data assimilation, and scientific computing."
+    >
 
-  <!-- Link to CSS -->
-  <link rel="stylesheet" type="text/css" href="./styles/normalize.css" />
-  <link rel="stylesheet" type="text/css" href="./styles/style.css" />
+    <meta name="author" content="Marco Stefanelli">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link
+        rel="canonical"
+        href="https://stfmrc.github.io/MarcoStefanelli/"
+    >
+
+    <!-- Open Graph -->
+    <meta
+        property="og:title"
+        content="Marco Stefanelli | Machine Learning & Earth System Science"
+    >
+
+    <meta
+        property="og:description"
+        content="Machine learning, Earth observation, weather and climate science, data assimilation, and scientific computing."
+    >
+
+    <meta property="og:type" content="website">
+
+    <meta
+        property="og:url"
+        content="https://stfmrc.github.io/MarcoStefanelli/"
+    >
+
+    <!-- Stylesheets -->
+    <link
+        rel="stylesheet"
+        href="./styles/normalize.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./styles/style.css"
+    >
 </head>
 
+
 <body>
-  <div class="container">
-    <div class="header">
-      <img src="./images/ME2.jpg" alt="Marco Stefanelli" class="profile-image" />
-      <h1>MARCO STEFANELLI</h1>
 
-      <div id="orcid">
-        <p>
-          <a
-            id="cy-effective-orcid-url"
-            class="orcid-badge"
-            href="https://orcid.org/0009-0002-7559-3253"
-            target="orcid.widget"
-            rel="me noopener noreferrer"
-          >
+    <main class="container">
+
+        <header class="header">
+
+            <!-- Profile picture -->
             <img
-              src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-              alt="ORCID iD icon"
-            />
-            <span class="orcid-label">ORCID iD</span>
-            <span class="orcid-id">0009-0002-7559-3253</span>
-          </a>
+                src="./images/ME2.jpg"
+                alt="Portrait of Marco Stefanelli"
+                class="profile-image"
+            >
+
+            <!-- Name -->
+            <h1>MARCO STEFANELLI</h1>
+
+            <!-- Professional identity -->
+            <p class="tagline">
+                Machine Learning Scientist
+                <br>
+                Earth Observation, Weather &amp; Climate
+            </p>
+
+
+            <!-- ORCID -->
+            <div id="orcid">
+
+                <p>
+                    <a
+                        id="cy-effective-orcid-url"
+                        class="orcid-badge"
+                        href="https://orcid.org/0009-0002-7559-3253"
+                        target="_blank"
+                        rel="me noopener noreferrer"
+                        aria-label="Marco Stefanelli ORCID profile"
+                    >
+                        <img
+                            src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
+                            alt=""
+                            aria-hidden="true"
+                        >
+
+                        <span class="orcid-label">
+                            ORCID iD
+                        </span>
+
+                        <span class="orcid-id">
+                            0009-0002-7559-3253
+                        </span>
+                    </a>
+                </p>
+
+            </div>
+
+
+            <!-- Email -->
+            <div id="mail">
+
+                <p>
+                    <a href="mailto:stfmrc.dev@gmail.com">
+                        stfmrc.dev@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+        </header>
+
+
+        <!-- Main navigation -->
+        <nav
+            class="button-container"
+            aria-label="Main navigation"
+        >
+
+            <a
+                class="nav-button"
+                href="./project/about.html"
+            >
+                About
+            </a>
+
+            <a
+                class="nav-button"
+                href="./project/ongoing_projects.html"
+            >
+                Research
+            </a>
+
+            <a
+                class="nav-button"
+                href="./project/publications.html"
+            >
+                Publications
+            </a>
+
+            <a
+                class="nav-button"
+                href="./project/educational.html"
+            >
+                Outreach &amp; Education
+            </a>
+
+        </nav>
+
+    </main>
+
+
+    <footer>
+        <p>
+            &copy; 2026 Marco Stefanelli
         </p>
+    </footer>
 
-        <div id="mail">
-          <p><a href="mailto:marco.stefanelli@fmf.uni-lj.si">marco.stefanelli@fmf.uni-lj.si</a></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="button-container">
-      <button onclick="window.location.href='./project/about.html'">About</button>
-      <button onclick="window.location.href='./project/ongoing_projects.html'">Ongoing project</button>
-      <button onclick="window.location.href='./project/publications.html'">Publications</button>
-      <button onclick="window.location.href='./project/educational.html'">Educational</button>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Marco Stefanelli</p>
-  </footer>
-
-  <!-- (contatore rimosso) -->
 </body>
+
 </html>

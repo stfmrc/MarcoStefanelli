@@ -1,84 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Publications</title>
-    <!-- Link to CSS -->
+
+    <title>Publications | Marco Stefanelli</title>
+
+    <meta
+        name="description"
+        content="Selected publications by Marco Stefanelli on data assimilation, ocean modelling, weather radar, and machine learning."
+    >
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/educational.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three/examples/js/controls/OrbitControls.js"></script>
-    <script>
-        window.MathJax = {
-          tex: {
-            displayMath: [['\\[', '\\]'], ['\\(', '\\)']]
-          },
-          svg: {
-            scale: 1
-          },
-          options: {
-            renderActions: {
-              addMenu: []
+
+    <!-- Small fixes for this page only -->
+    <style>
+
+        body.publications main {
+            width: 60%;
+
+            margin: 10px auto 0;
+
+            padding: 1rem;
+
+            display: block;
+
+            color: white;
+
+            font-size: 1.2rem;
+            line-height: 1.6;
+
+            text-align: justify;
+        }
+
+
+        body.publications header {
+            margin-top: 40px;
+        }
+
+
+        body.publications main p {
+            margin-bottom: 20px;
+        }
+
+
+        body.publications .publication-reference {
+            margin-bottom: 25px;
+
+            text-align: left;
+        }
+
+
+        body.publications .paper-link {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 9px 17px;
+
+            background-color: #2a7ae2;
+
+            color: white;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            transition:
+                background-color 0.2s ease,
+                transform 0.2s ease;
+        }
+
+
+        body.publications .paper-link:hover {
+            background-color: #1e5bb8;
+
+            color: white;
+
+            text-decoration: none;
+
+            transform: translateY(-1px);
+        }
+
+
+        body.publications .paper-section {
+            text-align: center;
+        }
+
+
+        body.publications .back-home {
+            display: block;
+
+            margin: 10px auto 20px;
+
+            text-align: center;
+
+            font-size: 1.8rem;
+
+            text-decoration: none;
+        }
+
+
+        @media screen and (max-width: 768px) {
+
+            body.publications main {
+                width: 90%;
+
+                font-size: 1rem;
+
+                text-align: left;
             }
-          }
-        };
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+        }
+
+
+        @media screen and (max-width: 480px) {
+
+            body.publications main {
+                width: 95%;
+
+                padding: 0.8rem;
+            }
+
+        }
+
+    </style>
+
 </head>
-<body class="publications"> <!-- Added class here -->
-    <br><br>
-    <br><br>
+
+
+<body class="publications">
+
     <header>
         <h1>Publications</h1>
     </header>
 
-    <main>
-    
-        <ul class="tool-list">
-            <li>
-                <details>
-                    <summary>Data assimilation for advanced cross-scale unstructured grid ocean modelling</summary>
 
-                    <p>
-                      <p>
+    <main>
+
+        <ul class="tool-list">
+
+            <li>
+
+                <details>
+
+                    <summary>
+                        Data assimilation for advanced cross-scale unstructured-grid ocean modelling
+                    </summary>
+
+
+                    <p class="publication-reference">
                         <em>
-                            Stefanelli M, Jansen E, Aydoğdu A, Federico I and Coppini G (2025) <br>
-                            Data assimilation for advanced cross-scale unstructured grid ocean modelling.<br>
-                            Front. Mar. Sci. 12:1656879. doi: 
-                            <a href="https://doi.org/10.3389/fmars.2025.1656879" 
-                            target="_blank" 
-                            rel="noopener noreferrer">
-                            10.3389/fmars.2025.1656879
+                            Stefanelli, M., Jansen, E., Aydoğdu, A., Federico, I. and Coppini, G. (2025).<br>
+                            Data assimilation for advanced cross-scale unstructured-grid ocean modelling.<br>
+                            <i>Frontiers in Marine Science</i>, 12:1656879.<br>
+                            DOI:
+                            <a
+                                href="https://doi.org/10.3389/fmars.2025.1656879"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                10.3389/fmars.2025.1656879
                             </a>
                         </em>
-                        </p>
-                        Coastal zones face growing threats from climate change, including sea-level rise and intensified storm activity. 
-                        Accurate numerical modelling is essential to predict the impacts of anthropogenic and climate stressors on the coastal zone. 
-                        However, it is also a very challenging environment due to complex coastlines, rapid topographic changes, and high spatial-temporal variability.
-                        Unstructured grid models offer a promising solution, yet their integration with advanced data assimilation (DA) methods remains limited. 
-                        This study presents the implementation of a 3D variational data assimilation (3DVar) scheme (OceanVar) within an unstructured-grid ocean model (SHYFEM). 
-                        A key innovation involves generalizing the first-order recursive filter for horizontal background error covariances to work with triangular unstructured meshes. 
-                        An experiment was conducted over the period 2017–2018, assimilating ARGO in-situ profiles, and sea level anomaly (SLA) data from altimetry satellite missions. 
-                        Results show substantial skill improvement against a control run without assimilation, particularly in the 100–500 m depth range, 
-                        where the mean absolute error was reduced by 25–30% through data assimilation. SLA assimilation had a more modest effect, improving MAE by about 
-                        3% overall and up to 20% locally, without degrading temperature or salinity estimates. The study demonstrates the feasibility and benefits of applying 
-                        a 3DVar scheme to unstructured grid ocean models, paving the way for more accurate and efficient coastal forecasting systems.
-                        
                     </p>
-                    <a href="https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2025.1656879/full" >
-                        <button>Read the paper</button>
-                    </a>
+
+
+                    <p>
+                        Coastal zones face growing threats from climate change,
+                        including sea-level rise and intensified storm activity.
+                        Accurate numerical modelling is essential to predict the
+                        impacts of anthropogenic and climate stressors on the coastal zone.
+
+                        However, it is also a very challenging environment due to
+                        complex coastlines, rapid topographic changes, and high
+                        spatial-temporal variability.
+                    </p>
+
+
+                    <p>
+                        Unstructured-grid models offer a promising solution,
+                        yet their integration with advanced data-assimilation (DA)
+                        methods remains limited.
+
+                        This study presents the implementation of a three-dimensional
+                        variational data-assimilation (3DVar) scheme, OceanVar,
+                        within the unstructured-grid ocean model SHYFEM.
+
+                        A key innovation involves generalising the first-order
+                        recursive filter for horizontal background-error covariances
+                        to work with triangular unstructured meshes.
+                    </p>
+
+
+                    <p>
+                        An experiment was conducted over the period 2017–2018,
+                        assimilating Argo in-situ profiles and sea-level anomaly (SLA)
+                        data from satellite altimetry missions.
+
+                        Results show substantial skill improvement relative to a
+                        control run without assimilation, particularly in the
+                        100–500 m depth range, where the mean absolute error was
+                        reduced by 25–30% through data assimilation.
+
+                        SLA assimilation had a more modest effect, improving MAE by
+                        about 3% overall and up to 20% locally, without degrading
+                        temperature or salinity estimates.
+                    </p>
+
+
+                    <p>
+                        The study demonstrates the feasibility and benefits of
+                        applying a 3DVar scheme to unstructured-grid ocean models,
+                        paving the way for more accurate and efficient coastal
+                        forecasting systems.
+                    </p>
+
+
+                    <p class="paper-section">
+
+                        <a
+                            class="paper-link"
+                            href="https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2025.1656879/full"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Read the paper
+                        </a>
+
+                    </p>
+
                 </details>
+
             </li>
-    
+
         </ul>
+
     </main>
 
 
     <footer>
-        <p>&copy; 2025 Marco Stefanelli</p>
+        <p>&copy; 2026 Marco Stefanelli</p>
     </footer>
-    <a href="../index.html">⬅️</a>
+
+
+    <nav aria-label="Back to homepage">
+
+        <a
+            class="back-home"
+            href="../index.html"
+            aria-label="Back to homepage"
+        >
+            ⬅️
+        </a>
+
+    </nav>
+
 </body>
+
 </html>

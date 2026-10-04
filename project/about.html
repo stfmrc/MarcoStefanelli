@@ -1,81 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <!-- Link to CSS -->
+
+    <title>About | Marco Stefanelli</title>
+
+    <!-- Main styles -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/ongoing_projects.css">
 
+    <!-- Small fixes only for the About page -->
+    <style>
+        body.about main {
+            width: 60%;
+            margin: 40px auto 0;
+            padding: 1rem;
+
+            display: block;
+
+            color: white;
+
+            font-size: 1.2rem;
+            line-height: 1.6;
+
+            text-align: justify;
+        }
+
+        body.about main p {
+            margin-bottom: 25px;
+        }
+
+        body.about main a {
+            color: #73c7ff;
+            text-decoration: none;
+        }
+
+        body.about main a:hover {
+            color: #a8ddff;
+            text-decoration: underline;
+        }
+
+        body.about .back-home {
+            display: block;
+
+            margin: 10px auto 20px;
+
+            text-align: center;
+
+            font-size: 1.8rem;
+
+            text-decoration: none;
+        }
+
+        body.about footer {
+            margin-top: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            body.about main {
+                width: 90%;
+                margin-top: 25px;
+
+                font-size: 1rem;
+
+                text-align: left;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body.about main {
+                width: 95%;
+
+                padding: 0.8rem;
+            }
+        }
+    </style>
+
 </head>
-<body class="about"> <!-- Added class here -->
+
+
+<body class="about">
+
     <main>
-        <br><br>
-        <br><br>
 
-        <p>I am Marco Stefanelli, an Italian researcher with a multidisciplinary 
-           background in Earth System Physics, Climate Science, Climate and Weather Modelling, 
-           Data Assimilation, Data Science and Artificial Intelligence. 
-           <br><br>
+        <p>
+            I am Marco Stefanelli, an Italian machine-learning scientist working at the intersection of
+            Earth system science, weather and climate modelling, data assimilation, and artificial intelligence.
+            My research combines scientific modelling, large-scale environmental data processing, and machine learning
+            for applications in weather forecasting, climate science, and ocean modelling.
+        </p>
 
-           I hold a PhD in Future Earth, Climate Change, and Societal Challenges 
-           from the University of Bologna in collaboration with CMCC 
-           (Euro-Mediterranean Centre on Climate Change). 
-           My research focused on data assimilation 
-           for advanced cross-scale unstructured grid ocean modelling.
-           <br><br>
 
-           Currently, I am a <a href="https://smash.ung.si/">SMASH</a> postdoctoral researcher at the Faculty 
-           of Mathematics and Physics (FMF) at the University of Ljubljana (Slovenia). My research involves Data assimilation,
-           Artificial Intelligence and Weather Forecast. The main goal is to improve the forecast of severe precipitation
-           events using weather radar data (read the <a href="ongoing_projects.html"> abstract</a>). 
-           <br><br>
+        <p>
+            I hold a PhD in Future Earth, Climate Change and Societal Challenges from the University of Bologna,
+            carried out in collaboration with the Euro-Mediterranean Centre on Climate Change (CMCC).
+            My doctoral research focused on data assimilation for advanced cross-scale unstructured-grid ocean modelling.
+        </p>
 
-           Throughout my career, I have had the opportunity to work on a range of impactful projects, 
-           including my research at the Abdus Salam International Centre for Theoretical Physics (ICTP) 
-           on urbanization effects on the West African monsoon. I am also passionate about outreach and 
-           citizen science, having led projects aimed at raising awareness of climate change and air 
-           quality issues. Additionally, I have experience teaching and mentoring, having worked as a 
-           secondary school teacher in computer and energy sciences. 
-           <br><br>
 
-           I am currently privileged to collaborate with Prof. Simone Napolitano, 
-           a professor at the art high school in Mantova, in the field of scientific dissemination. 
-           Our work focuses on how to effectively bring complex scientific concepts
-           (e.g. Chaos Theory) into high school classrooms. In this ongoing collaboration, 
-           I contribute my expertise in developing methods to support teachers in introducing 
-           challenging topics to students, ensuring these subjects remain accessible and engaging.
-           Another important goal of our partnership is to increase awareness of climate change 
-           among younger generations, helping them understand its scientific underpinnings and 
-           motivating them to become active participants in environmental conservation. 
-           <br><br>
+        <p>
+            More recently, as a
+            <a
+                href="https://smash.ung.si/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                SMASH
+            </a>
+            Marie Skłodowska-Curie COFUND postdoctoral researcher at the University of Ljubljana,
+            I developed a neural-network-based observation operator for assimilating weather-radar observations
+            into a 3DVar framework.
 
-           Fluent in both Italian and English, I am skilled in a variety of programming languages (Python, Fortran),
-           Linux/Unix environments, and advanced data science tools like Jupyter and GitHub. I also have extensive 
-           experience in managing large datasets in multiple formats, including NetCDF, GRIB, and HDF5, enabling me 
-           to handle complex data-driven tasks efficiently and effectively. Additionally, I am an advanced user of 
-           HPC environments such as SLURM, PBS, and LSF.
-           <br><br>
+            My work covered the full research workflow, from processing TB-scale datasets and training neural networks
+            with PyTorch and GPUs to validation, data-assimilation integration, and publication of open-source software
+            and datasets.
 
-           My academic journey has been marked by a deep commitment to environmental issues and scientific collaboration, 
-           and I am always looking for new ways to leverage my expertise to drive innovation and awareness in climate science. 
-           <br><br>
+            You can read more about this work
+            <a href="ongoing_projects.html">here</a>.
+        </p>
 
-           Read the complete <a href="../pdf/Stefanelli_CV.pdf" target="_blank">CURRICULUM VITAE</a>
-           or <a href="../pdf/Stefanelli_CV.pdf" download> DOWNLOAD</a> it.
-           <br><br>
 
-           For any questions or proposal feel free to contact me at: <a href="mailto:marco.stefanelli@fmf.uni-lj.si">marco.stefanelli@fmf.uni-lj.si</a>.
-           <br><br>
+        <p>
+            I have also worked on ocean data assimilation at CMCC and on regional climate modelling at ICTP,
+            where I studied the effects of urbanisation on the West African monsoon.
+
+            My technical work focuses mainly on Python, PyTorch, scientific data processing, Linux/HPC environments,
+            and reproducible workflows for large weather, climate, satellite, and numerical-model datasets.
+        </p>
+
+
+        <p>
+            Alongside research, I am interested in scientific communication and education,
+            particularly in making topics such as climate change, data assimilation, and deterministic chaos
+            accessible to students and wider audiences.
+        </p>
+
+
+        <p>
+            Read my complete
+            <a
+                href="../pdf/Stefanelli_CV.pdf"
+                target="_blank"
+            >
+                Curriculum Vitae
+            </a>
+            or
+            <a
+                href="../pdf/Stefanelli_CV.pdf"
+                download
+            >
+                download it
+            </a>.
+        </p>
+
+
+        <p>
+            For questions or collaboration opportunities, feel free to contact me at
+            <a href="mailto:stfmrc.dev@gmail.com">
+                stfmrc.dev@gmail.com
+            </a>.
         </p>
 
     </main>
 
 
     <footer>
-        <p>&copy; 2025 Marco Stefanelli</p>
+        <p>&copy; 2026 Marco Stefanelli</p>
     </footer>
-    <a href="../index.html">⬅️</a>
+
+
+    <a
+        class="back-home"
+        href="../index.html"
+        aria-label="Back to homepage"
+    >
+        ⬅️
+    </a>
+
 </body>
+
 </html>

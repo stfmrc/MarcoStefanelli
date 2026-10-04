@@ -2,7 +2,9 @@
    BASIC RESET
    ========================================================= */
 
-* {
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -20,10 +22,15 @@
 
 html {
     min-height: 100%;
+
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 body {
     min-height: 100vh;
+    min-height: 100svh;
+
     width: 100%;
 
     display: flex;
@@ -55,6 +62,12 @@ body {
 
     background-size: cover;
     background-repeat: no-repeat;
+
+    /*
+       Do not use background-attachment: fixed here.
+       Safari can render fixed backgrounds inconsistently.
+    */
+    background-attachment: scroll;
 }
 
 
@@ -229,6 +242,7 @@ a:focus-visible {
 
 .orcid-badge:hover {
     color: #ffffff;
+
     text-decoration: underline;
 }
 
@@ -334,8 +348,8 @@ a:focus-visible {
 
     cursor: pointer;
 
-    backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
 
     transition:
         background-color 0.3s ease,
@@ -404,6 +418,92 @@ footer a:hover {
 
 
 /* =========================================================
+   CROSS-BROWSER / SAFARI FIXES
+   ========================================================= */
+
+/*
+   Prevent Safari flexbox from unexpectedly shrinking
+   major page elements.
+*/
+main,
+header,
+footer,
+.container {
+    flex-shrink: 0;
+}
+
+
+/*
+   Safari handles images more consistently when they
+   are block-level elements.
+*/
+img {
+    display: block;
+
+    max-width: 100%;
+
+    height: auto;
+}
+
+
+/*
+   Make details / summary consistent across browsers.
+*/
+details {
+    display: block;
+}
+
+summary {
+    display: list-item;
+
+    cursor: pointer;
+}
+
+
+/*
+   Prevent Safari from adding its own button styling.
+*/
+button,
+input,
+select,
+textarea {
+    font: inherit;
+
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+/* =========================================================
+   INTERNAL PAGES
+   ABOUT / PROJECTS / PUBLICATIONS / EDUCATION
+   ========================================================= */
+
+/*
+   These rules make the text pages behave more consistently
+   in Chrome, Safari and Firefox.
+
+   Individual page styles can still override these.
+*/
+
+body.about main,
+body.ongoing-projects main,
+body.publications main,
+body.educational main {
+    width: min(900px, 90%);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    /*
+       Left-aligned text renders much more consistently
+       than justified text in Safari.
+    */
+    text-align: left;
+}
+
+
+/* =========================================================
    TABLET
    ========================================================= */
 
@@ -438,6 +538,13 @@ footer a:hover {
 
         padding: 10px 18px;
     }
+
+    body.about main,
+    body.ongoing-projects main,
+    body.publications main,
+    body.educational main {
+        width: 90%;
+    }
 }
 
 
@@ -446,6 +553,10 @@ footer a:hover {
    ========================================================= */
 
 @media (max-width: 520px) {
+
+    body {
+        min-height: 100svh;
+    }
 
     .container {
         justify-content: flex-start;
@@ -494,6 +605,15 @@ footer a:hover {
         min-width: 0;
 
         padding: 11px 16px;
+    }
+
+    body.about main,
+    body.ongoing-projects main,
+    body.publications main,
+    body.educational main {
+        width: 95%;
+
+        text-align: left;
     }
 
     footer {

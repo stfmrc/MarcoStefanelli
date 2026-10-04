@@ -12,11 +12,9 @@
         content="Interactive educational tools and outreach projects by Marco Stefanelli on climate change, weather forecasting, chaos, and data assimilation."
     >
 
-    <!-- CSS -->
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/educational.css">
 
-    <!-- MathJax -->
     <script>
         window.MathJax = {
             tex: {
@@ -40,151 +38,7 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
 
-    <!-- Small fixes for this page only -->
-    <style>
-
-        body.educational main {
-            width: 60%;
-
-            margin: 10px auto 0;
-
-            padding: 1rem;
-
-            display: block;
-
-            color: white;
-
-            font-size: 1.2rem;
-            line-height: 1.6;
-
-            text-align: justify;
-        }
-
-
-        body.educational header {
-            margin-top: 40px;
-        }
-
-
-        body.educational main p {
-            margin-bottom: 22px;
-        }
-
-
-        body.educational .action-link {
-            display: inline-block;
-
-            margin: 10px 0 20px;
-
-            padding: 9px 17px;
-
-            background-color: #2a7ae2;
-
-            color: white;
-
-            border-radius: 6px;
-
-            text-decoration: none;
-
-            transition:
-                background-color 0.2s ease,
-                transform 0.2s ease;
-        }
-
-
-        body.educational .action-link:hover {
-            background-color: #1e5bb8;
-
-            color: white;
-
-            text-decoration: none;
-
-            transform: translateY(-1px);
-        }
-
-
-        body.educational .equation {
-            margin: 25px 0;
-
-            text-align: center;
-        }
-
-
-        body.educational .questions {
-            margin: 20px 0 25px;
-
-            padding-left: 25px;
-        }
-
-
-        body.educational .questions li {
-            margin-bottom: 10px;
-        }
-
-
-        body.educational .instructions {
-            margin-top: 30px;
-
-            padding: 18px 20px;
-
-            border-radius: 8px;
-
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-
-        body.educational .instructions h3 {
-            margin-bottom: 10px;
-        }
-
-
-        body.educational .language-label {
-            display: inline-block;
-
-            margin-bottom: 8px;
-        }
-
-
-        body.educational .back-home {
-            display: block;
-
-            margin: 10px auto 20px;
-
-            text-align: center;
-
-            font-size: 1.8rem;
-
-            text-decoration: none;
-        }
-
-
-        @media screen and (max-width: 768px) {
-
-            body.educational main {
-                width: 90%;
-
-                font-size: 1rem;
-
-                text-align: left;
-            }
-
-        }
-
-
-        @media screen and (max-width: 480px) {
-
-            body.educational main {
-                width: 95%;
-
-                padding: 0.8rem;
-            }
-
-        }
-
-    </style>
-
 </head>
-
 
 <body class="educational">
 
@@ -196,7 +50,6 @@
         </h1>
 
     </header>
-
 
     <main>
 
@@ -213,12 +66,7 @@
             scientific concepts more accessible and engaging.
         </p>
 
-
         <ul class="tool-list">
-
-            <!-- =====================================================
-                 LORENZ-63 TOOL
-                 ===================================================== -->
 
             <li>
 
@@ -228,7 +76,6 @@
                         Web application — Lorenz-63 and Data Assimilation Tool
                     </summary>
 
-
                     <a
                         class="action-link"
                         href="../tools/1_lorenz-3dvar-project.zip"
@@ -236,7 +83,6 @@
                     >
                         Download Tool
                     </a>
-
 
                     <p>
                         This tool is designed for educational purposes and can
@@ -248,7 +94,6 @@
                         data-assimilation method.
                     </p>
 
-
                     <p>
                         The Lorenz-63 model is a simplified dynamical system
                         that exhibits chaotic behaviour, making it a useful
@@ -257,7 +102,6 @@
 
                         It consists of three ordinary differential equations:
                     </p>
-
 
                     <div class="equation">
 
@@ -270,7 +114,6 @@
                         \]
 
                     </div>
-
 
                     <p>
                         The model provides an idealised representation of fluid
@@ -287,7 +130,6 @@
                         predictability.
                     </p>
 
-
                     <p>
                         The tool allows users to interact with the Lorenz-63
                         model and observe how a forecast evolves over time.
@@ -299,7 +141,6 @@
                         allowing users to observe how initially similar
                         trajectories progressively diverge.
                     </p>
-
 
                     <p>
                         The data-assimilation component allows observations to
@@ -316,14 +157,12 @@
                         affect the analysis and subsequent forecast.
                     </p>
 
-
                     <p>
                         The data-assimilation method is a simplified
                         one-dimensional Kalman-filter formulation.
 
                         The Kalman gain is defined as:
                     </p>
-
 
                     <div class="equation">
 
@@ -340,7 +179,6 @@
 
                     </div>
 
-
                     <p>
                         Users can also modify
                         \(\sigma_{\text{model}}\),
@@ -349,12 +187,10 @@
                         observations.
                     </p>
 
-
                     <p>
                         The analysis equations for the three Lorenz-63
                         components are:
                     </p>
-
 
                     <div class="equation">
 
@@ -368,7 +204,6 @@
 
                     </div>
 
-
                     <p>
                         These equations are used to compute the analysis,
                         which then provides the initial conditions for the next
@@ -379,9 +214,7 @@
                         true state.
                     </p>
 
-
                     <h3>Questions for students</h3>
-
 
                     <ul class="questions">
 
@@ -441,7 +274,6 @@
 
                     </ul>
 
-
                     <div class="instructions">
 
                         <h3>How to use the tool</h3>
@@ -453,7 +285,6 @@
                         </p>
 
                     </div>
-
 
                     <a
                         class="action-link"
@@ -467,11 +298,6 @@
 
             </li>
 
-
-            <!-- =====================================================
-                 CLIMATE EDUCATION PROJECT
-                 ===================================================== -->
-
             <li>
 
                 <details>
@@ -482,7 +308,6 @@
                         consapevolezza e futuro
                     </summary>
 
-
                     <a
                         class="action-link"
                         href="../pdf/Progetto_Simone.pdf"
@@ -491,7 +316,6 @@
                     >
                         Read the project report
                     </a>
-
 
                     <p>
 
@@ -521,7 +345,6 @@
                         delle fonti e cittadinanza attiva.
                     </p>
 
-
                     <p>
                         Il percorso prevede un test diagnostico iniziale,
                         una fase di ricerca cooperativa sul tema
@@ -542,7 +365,6 @@
                         biennio e ampliabile nel triennio con approfondimenti
                         su teoria del caos e sistemi complessi.
                     </p>
-
 
                     <p>
 
@@ -572,7 +394,6 @@
                         citizenship.
                     </p>
 
-
                     <p>
                         The programme includes an initial diagnostic test,
                         a cooperative research phase on the climate emergency
@@ -601,11 +422,9 @@
 
     </main>
 
-
     <footer>
         <p>&copy; 2026 Marco Stefanelli</p>
     </footer>
-
 
     <nav aria-label="Back to homepage">
 

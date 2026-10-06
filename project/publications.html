@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['\\(', '\\)']]
+        }
+    };
+</script>
+<script
+    async
+    id="MathJax-script"
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -96,6 +109,92 @@
                         paving the way for more accurate and efficient coastal
                         forecasting systems.
                     </p>
+
+                    <p class="paper-section">
+
+                        <a
+                            class="paper-link"
+                            href="https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2025.1656879/full"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Read the paper
+                        </a>
+
+                    </p>
+
+                </details>
+
+            </li>
+
+             <li>
+
+                <details>
+
+                    <summary>
+                        A neural-network model-measurement-based observation operator forweather radar reflectivity assimilation
+                    </summary>
+
+                    <p class="publication-reference">
+                        <em>
+                            Stefanelli, M., Jansen, E., Aydoğdu, A., Federico, I. and Coppini, G. (2025).<br>
+                            A neural-network model-measurement-based observation operator for weather radar reflectivity assimilation.<br>
+                            <i>Preprint, arXiv</i>.<br>
+                            
+                            <a
+                                href="https://arxiv.org/pdf/2512.18289"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                https://arxiv.org/pdf/2512.18289
+                            </a>
+                        </em>
+                    </p>
+
+                    <p>
+    In three-dimensional variational data assimilation (3DVar) for numerical
+    weather prediction (NWP), the observation operator \(\mathcal{H}\) plays a
+    central role by mapping model state variables to an observation-equivalent
+    field. For weather radar, however, specifying \(\mathcal{H}\) is particularly
+    challenging: reflectivity is a nonlinear, microphysics-dependent diagnostic
+    quantity that relates only indirectly to the model’s prognostic variables,
+    making traditional parameterised radar operators complex, regime-dependent,
+    and difficult to tune.
+</p>
+
+<p>
+    In this study, we propose a neural-network (NN)-based observation operator
+    for radar reflectivity and apply it within a 3DVar data-assimilation (DA)
+    framework. Using five years (2019–2023) of radar reflectivity data from the
+    Lisca radar and 4.4 km-resolution short-range forecasts from the ALADIN model
+    over Slovenia, we train a convolutional encoder–decoder neural network to
+    map model temperature, humidity, horizontal wind components, and mean
+    sea-level pressure fields to radar reflectivity.
+</p>
+
+<p>
+    Statistical evaluation showed that the trained observation operator can
+    represent the broader distribution and spatial occurrence of weak-to-moderate
+    precipitation, but remains limited in reproducing the frequency, intensity,
+    and spatial organisation of the strongest radar reflectivity features.
+</p>
+
+<p>
+    The practical performance of the framework was evaluated using an extreme
+    precipitation event that caused widespread flooding in Slovenia on
+    4 August 2023. In this case, assimilating the full radar disc reduced the
+    domain-averaged reflectivity root-mean-square error (RMSE) from
+    5.99 dB(Z) to 3.47 dB(Z) and improved the alignment between the analysed
+    and observed convective bands.
+</p>
+
+<p>
+    Embedded within 3DVar, the Jacobian of the NN observation operator allows
+    radar reflectivity observations to inform the model state variables,
+    producing corresponding analysis increments. The proposed NN radar
+    observation operator offers a flexible alternative to traditional
+    parameterised radar operators for improving convective-storm forecasts.
+</p>
 
                     <p class="paper-section">
 

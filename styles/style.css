@@ -204,7 +204,9 @@ body.educational main {
     color: #fff;
     font-size: 1.2rem;
     line-height: 1.6;
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 body.about main {
